@@ -9,6 +9,19 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+set :haml, { ugly: true, format: :html5 }
+set :markdown, fenced_code_blocks: true, smartypants: true
+
+activate :directory_indexes
+
+Time.zone = "America/Denver"
+
+activate :blog do |blog|
+	blog.prefix = 'blog'
+	blog.paginate = true
+	blog.per_page = 5
+end
+
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
@@ -20,7 +33,7 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+	activate :livereload
 end
 
 ###
@@ -36,9 +49,9 @@ end
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
+	# Minify CSS on build
+	activate :minify_css
 
-  # Minify Javascript on build
-  # activate :minify_javascript
+	# Minify Javascript on build
+	activate :minify_javascript
 end
