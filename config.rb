@@ -9,12 +9,12 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-set :haml, { ugly: true, format: :html5 }
+set :haml, ugly: true, format: :html5
 set :markdown, fenced_code_blocks: true, smartypants: true
 
 activate :directory_indexes
 
-Time.zone = "America/Denver"
+Time.zone = 'America/Denver'
 
 activate :blog do |blog|
 	blog.prefix = 'blog'
