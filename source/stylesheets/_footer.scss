@@ -1,0 +1,77 @@
+footer {
+	border-top: 1px solid $alto;
+	clear: both;
+	display: flex;
+	justify-content: space-between;
+	margin: 60px auto 100px;
+	max-width: 840px;
+	padding: 20px 20px 0;
+	width: 90%;
+
+	p {
+		color: $silver-chalice;
+		height: 32px;
+		line-height: 32px;
+		margin: 0;
+	}
+
+	ul {
+		height: 32px;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		background-repeat: no-repeat;
+		border: 0;
+		display: block;
+		height: 32px;
+		text-indent: -9999em;
+		width: 32px;
+	}
+
+	[title] {
+		border-bottom: 0;
+	}
+
+	.dribbble {
+		background-image: url("/images/dribbble-circle.svg");
+	}
+
+	.facebook {
+		background-image: url("/images/facebook-circle.svg");
+	}
+
+	.github {
+		background-image: url("/images/github-circle.svg");
+	}
+
+	.googleplus {
+		background-image: url("/images/googleplus-circle.svg");
+	}
+
+	.linkedin {
+		background-image: url("/images/linkedin-circle.svg");
+	}
+
+	.rss {
+		background-image: url("/images/rss-circle.svg");
+	}
+
+	.twitter {
+		background-image: url("/images/twitter-circle.svg");
+	}
+
+	.racecarstudio {
+		background-image: url("/images/racecarstudio-circle.svg");
+	}
+
+	svg {
+		height: 32px;
+		width: 32px;
+	}
+}

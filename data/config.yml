@@ -1,0 +1,18 @@
+# Site wide settings
+site:
+  root_url: https://benniemosher.com
+  title: Bennie Mosher - Problem Solver
+  title_separator: " &mdash; "
+  meta_description: Example description
+  meta_keywords:
+    - example
+    - keyword
+  author: Bennie Mosher
+  active_navigation_item_class: current
+  analytics_id: UA-XXXXXXX-XX
+
+# Author of CSS & JavaScript
+source:
+  author:
+    name: Bennie Mosher
+    uri: https://benniemosher.com
