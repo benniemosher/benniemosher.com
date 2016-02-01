@@ -23,14 +23,21 @@ footer {
 
 	li {
 		display: inline-block;
+		margin-right: 10px;
+
+		&:nth-last-of-type(1) {
+			margin-right: 0;
+		}
 	}
 
 	a {
+		background-color: $alto;
 		background-repeat: no-repeat;
 		border: 0;
 		display: block;
 		height: 32px;
 		text-indent: -9999em;
+		transition: background-color 0.5s ease-in-out;
 		width: 32px;
 	}
 
@@ -39,39 +46,66 @@ footer {
 	}
 
 	.dribbble {
-		background-image: url("/images/dribbble-circle.svg");
+		mask: url("/images/dribbble-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $dribbble;
+		}
 	}
 
 	.facebook {
-		background-image: url("/images/facebook-circle.svg");
+		mask: url("/images/facebook-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $facebook;
+		}
 	}
 
 	.github {
-		background-image: url("/images/github-circle.svg");
+		mask: url("/images/github-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $github;
+		}
 	}
 
 	.googleplus {
-		background-image: url("/images/googleplus-circle.svg");
+		mask: url("/images/googleplus-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $googleplus;
+		}
 	}
 
 	.linkedin {
-		background-image: url("/images/linkedin-circle.svg");
+		mask: url("/images/linkedin-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $linkedin;
+		}
 	}
 
 	.rss {
-		background-image: url("/images/rss-circle.svg");
+		mask: url("/images/rss-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $rss;
+		}
 	}
 
 	.twitter {
-		background-image: url("/images/twitter-circle.svg");
+		mask: url("/images/twitter-circle.svg") no-repeat 50% 50%;
+
+		&:hover {
+			background-color: $twitter;
+		}
 	}
 
 	.racecarstudio {
-		background-image: url("/images/racecarstudio-circle.svg");
-	}
+		mask: url("/images/racecarstudio-circle.svg") no-repeat 50% 50%;
 
-	svg {
-		height: 32px;
-		width: 32px;
+		&:hover {
+			background-color: $racecarstudio;
+		}
 	}
 }
