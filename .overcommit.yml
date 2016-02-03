@@ -3,6 +3,12 @@ PreCommit:
     enabled: true
     required: true
     description: Running scss-lint...
+  HamlLint:
+    enabled: true
+    required: true
+    command: ['haml-lint', 'source/**/*.haml']
+    on_warn: fail
+    description: Running haml-lint...
 # Use this file to configure the Overcommit hooks you wish to use. This will
 # extend the default configuration defined in:
 # https://github.com/brigade/overcommit/blob/master/config/default.yml
