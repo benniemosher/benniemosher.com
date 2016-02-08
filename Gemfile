@@ -9,6 +9,7 @@ gem 'middleman-minify-html'
 gem 'middleman-search_engine_sitemap'
 gem 'middleman-smusher'
 
-gem 'scss_lint'
+gem 'scss_lint', require: false
 gem 'haml_lint'
 gem 'overcommit'
+gem 'travis'

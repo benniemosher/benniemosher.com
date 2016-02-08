@@ -4,32 +4,32 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Raleway", sans-serif;
-	line-height: 1;
-	margin: 0;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1;
+  margin: 0;
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 h2 {
-	font-size: 1.4em;
+  font-size: 1.4em;
 }
 
 p {
-	font-family: "Lato", sans-serif;
-	font-size: 0.8em;
-	line-height: 1.25;
-	margin-top: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: .8em;
+  line-height: 1.25;
+  margin-top: 0;
 }
 
 a {
-	color: $orange;
-	text-decoration: none;
-	transition: all 0.5s ease-in-out;
+  color: $orange;
+  text-decoration: none;
+  transition: all .5s ease-in-out;
 
-	&:hover {
-		color: lighten($orange, 10%);
-	}
+  &:hover {
+    color: lighten($orange, 10%);
+  }
 }

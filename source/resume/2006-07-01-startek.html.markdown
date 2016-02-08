@@ -1,0 +1,7 @@
+---
+company: Startek
+position: Telephone Tech Support
+duration: July 2006 - December 2006
+location: Greeley, CO
+description: I was responsible for troubleshooting inbound phone calls for a high speed satellite internet company.
+---

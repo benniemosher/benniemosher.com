@@ -1,111 +1,111 @@
 footer {
-	border-top: 1px solid $alto;
-	clear: both;
-	display: flex;
-	justify-content: space-between;
-	margin: 60px auto 100px;
-	max-width: 840px;
-	padding: 20px 20px 0;
-	width: 90%;
+  border-top: 1px solid $alto;
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  margin: 60px auto 100px;
+  max-width: 840px;
+  padding: 20px 20px 0;
+  width: 90%;
 
-	p {
-		color: $silver-chalice;
-		height: 32px;
-		line-height: 32px;
-		margin: 0;
-	}
+  p {
+    color: $silver-chalice;
+    height: 32px;
+    line-height: 32px;
+    margin: 0;
+  }
 
-	ul {
-		height: 32px;
-		margin: 0;
-		padding: 0;
-	}
+  ul {
+    height: 32px;
+    margin: 0;
+    padding: 0;
+  }
 
-	li {
-		display: inline-block;
-		margin-right: 10px;
+  li {
+    display: inline-block;
+    margin-right: 10px;
 
-		&:nth-last-of-type(1) {
-			margin-right: 0;
-		}
-	}
+    &:nth-last-of-type(1) {
+      margin-right: 0;
+    }
+  }
 
-	a {
-		background-color: $alto;
-		background-repeat: no-repeat;
-		border: 0;
-		display: block;
-		height: 32px;
-		text-indent: -9999em;
-		transition: background-color 0.5s ease-in-out;
-		width: 32px;
-	}
+  a {
+    background-color: $alto;
+    background-repeat: no-repeat;
+    border: 0;
+    display: block;
+    height: 32px;
+    text-indent: -9999em;
+    transition: background-color .5s ease-in-out;
+    width: 32px;
+  }
 
-	[title] {
-		border-bottom: 0;
-	}
+  [title] {
+    border-bottom: 0;
+  }
 
-	.dribbble {
-		mask: url("/images/dribbble-circle.svg") no-repeat 50% 50%;
+  .dribbble {
+    mask: url('/images/dribbble-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $dribbble;
-		}
-	}
+    &:hover {
+      background-color: $dribbble;
+    }
+  }
 
-	.facebook {
-		mask: url("/images/facebook-circle.svg") no-repeat 50% 50%;
+  .facebook {
+    mask: url('/images/facebook-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $facebook;
-		}
-	}
+    &:hover {
+      background-color: $facebook;
+    }
+  }
 
-	.github {
-		mask: url("/images/github-circle.svg") no-repeat 50% 50%;
+  .github {
+    mask: url('/images/github-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $github;
-		}
-	}
+    &:hover {
+      background-color: $github;
+    }
+  }
 
-	.googleplus {
-		mask: url("/images/googleplus-circle.svg") no-repeat 50% 50%;
+  .googleplus {
+    mask: url('/images/googleplus-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $googleplus;
-		}
-	}
+    &:hover {
+      background-color: $googleplus;
+    }
+  }
 
-	.linkedin {
-		mask: url("/images/linkedin-circle.svg") no-repeat 50% 50%;
+  .linkedin {
+    mask: url('/images/linkedin-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $linkedin;
-		}
-	}
+    &:hover {
+      background-color: $linkedin;
+    }
+  }
 
-	.rss {
-		mask: url("/images/rss-circle.svg") no-repeat 50% 50%;
+  .rss {
+    mask: url('/images/rss-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $rss;
-		}
-	}
+    &:hover {
+      background-color: $rss;
+    }
+  }
 
-	.twitter {
-		mask: url("/images/twitter-circle.svg") no-repeat 50% 50%;
+  .twitter {
+    mask: url('/images/twitter-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $twitter;
-		}
-	}
+    &:hover {
+      background-color: $twitter;
+    }
+  }
 
-	.racecarstudio {
-		mask: url("/images/racecarstudio-circle.svg") no-repeat 50% 50%;
+  .racecarstudio {
+    mask: url('/images/racecarstudio-circle.svg') no-repeat 50% 50%;
 
-		&:hover {
-			background-color: $racecarstudio;
-		}
-	}
+    &:hover {
+      background-color: $racecarstudio;
+    }
+  }
 }
