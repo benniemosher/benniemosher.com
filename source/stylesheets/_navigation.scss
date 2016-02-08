@@ -1,0 +1,28 @@
+nav {
+  background-color: $shark;
+  font-size: 0.75em;
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 840px;
+    width: 90%;
+  }
+
+  span {
+    display: none;
+  }
+
+  a {
+    color: $white;
+    display: inline-block;
+    padding: 15px 30px;
+
+    &:hover {
+      background-color: $bright-gray;
+    }
+  }
+}

@@ -24,3 +24,9 @@ article {
     padding-top: .8rem;
   }
 }
+
+body:not(.resume) {
+  header {
+    justify-content: flex-start;
+  }
+}

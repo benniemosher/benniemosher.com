@@ -1,8 +1,24 @@
 header {
-  h2 {
+  .name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    line-height: 1;
+    margin: 0;
+  }
+
+  h2, .position {
     color: $orange;
+    font-family: 'Raleway', sans-serif;
     font-size: 1.4em;
     margin-top: .8rem;
+  }
+
+  img {
+    align-self: flex-start;
+    border-radius: 100%;
+    flex-basis: 100px;
+    width: 100px;
+    height: 100px;
   }
 
   span {
@@ -24,5 +40,23 @@ header {
     display: block;
     font-family: 'Lato', sans-serif;
     font-size: .8em;
+  }
+}
+
+body:not(.resume) {
+  header {
+    aside {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 40px;
+      vertical-align: middle;
+      width: auto;
+    }
+
+    span {
+      display: inline-block;
+      margin: 0;
+    }
   }
 }
