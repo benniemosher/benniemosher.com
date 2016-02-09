@@ -1,0 +1,80 @@
+.contact {
+  section {
+    justify-content: flex-start;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.15;
+  }
+
+  address {
+    font-family: 'Lato', sans-serif;
+    font-size: .8em;
+    font-style: normal;
+    margin-bottom: .8rem;
+    width: 120px;
+  }
+
+  aside {
+    a {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: .8em;
+    }
+  }
+
+  legend {
+    align-self: flex-end;
+    color: $bright-gray;
+    display: inline-flex;
+    font-size: 14px;
+    font-style: oblique;
+    margin-bottom: 20px;
+    text-align: right;
+    width: 100%;
+  }
+
+  input,
+  textarea {
+    border-radius: 2px;
+    border: 1px solid $alabaster;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0 20px 0;
+    padding: 0 15px;
+    width: calc(100% - 30px);
+
+    &:focus {
+      outline-color: $orange;
+    }
+
+    &::placeholder {
+      color: $alto;
+      font-size: 14px;
+      font-style: oblique;
+    }
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  [type='submit'] {
+    background: $orange;
+    border: 0;
+    color: $white;
+    display: flex;
+    line-height: 34px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: auto;
+  }
+}

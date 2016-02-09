@@ -3,12 +3,19 @@ title: Contact Bennie Mosher
 ---
 %section
   %h1 Contact
-  %form{ action: 'https://getsimpleform.com/messages?form_api_token=74be46cb735709080417e91c958bbefa', method: 'post' }
-    -# the redirect_to is optional, the form will redirect to the referrer on submission
-    %input{ type: 'hidden', name: 'redirect_to', value: '<the complete return url e.g. http://fooey.com/thank-you.html>' }/
-    -# all your input fields here....
-    %input{ type: 'text', name: 'first_name' }/
-    %input{ type: 'text', name: 'last_name' }/
-    %input{ type: 'text', name: 'email_address' }/
-    %textarea{ name: 'message' }
-    %input{ type: 'submit', value: 'Send me a message' }/
+  %aside
+    %span Bennie Mosher
+    %address
+      215 10th Street
+      Windsor, CO 80550
+    %a{ href: 'callto:+19705902040', target: '_blank' } +1 (970) 590-2040
+    %a{ href: 'mailto:benniemosher@gmail.com', target: '_blank' } benniemosher@gmail.com
+  %article
+    %form{ action: 'https://getsimpleform.com/messages?form_api_token=74be46cb735709080417e91c958bbefa', method: 'post' }
+      %legend * required fields
+      %input{ type: 'hidden', name: 'redirect_to', value: "https://benniemosher.com/thank-you/" }/
+      %input{ type: 'text', name: 'first_name', placeholder: 'First Name *', required: 'required' }/
+      %input{ type: 'text', name: 'last_name', placeholder: 'Last Name *', required: 'required' }/
+      %input{ type: 'text', name: 'email_address', placeholder: 'Email Address *', required: 'required' }/
+      %textarea{ name: 'message', placeholder: 'Tell me how I can help!' }
+      %input{ type: 'submit', value: 'Send me a message' }/
