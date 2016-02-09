@@ -30,3 +30,38 @@ body:not(.resume) {
     justify-content: flex-start;
   }
 }
+
+.contact,
+.index {
+  section {
+    justify-content: flex-start;
+
+    aside {
+      span {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.15;
+      }
+
+      address {
+        font-family: 'Lato', sans-serif;
+        font-size: .8em;
+        font-style: normal;
+        margin-bottom: .8rem;
+        width: 120px;
+      }
+
+      a {
+        display: block;
+        font-family: 'Lato', sans-serif;
+        font-size: .8em;
+      }
+    }
+  }
+
+  h1 {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
