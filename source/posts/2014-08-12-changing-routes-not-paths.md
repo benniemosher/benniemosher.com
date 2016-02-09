@@ -1,7 +1,5 @@
 ---
 title: Changing routes not paths
-author: benniemosher
-permalink: /changing-routes-not-paths/
 categories:
   - Rails
 tags:

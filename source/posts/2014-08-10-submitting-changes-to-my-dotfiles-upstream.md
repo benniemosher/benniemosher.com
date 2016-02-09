@@ -1,7 +1,5 @@
 ---
 title: Submitting Changes to my .dotfiles upstream
-author: benniemosher
-permalink: /submitting-changes-to-my-dotfiles-upstream/
 categories:
   - .dotfiles
   - Vim

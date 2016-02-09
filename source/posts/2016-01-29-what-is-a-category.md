@@ -1,6 +1,5 @@
 ---
 title: What is a category?
-author: benniemosher
 categories:
   - Learning
 tags:

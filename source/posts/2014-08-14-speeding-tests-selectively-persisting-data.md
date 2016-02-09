@@ -1,7 +1,5 @@
 ---
 title: Speeding up your tests by selectively persisting data
-author: benniemosher
-permalink: /speeding-tests-selectively-persisting-data/
 categories:
   - Test Driven Development
 tags:

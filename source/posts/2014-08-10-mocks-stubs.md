@@ -1,7 +1,5 @@
 ---
 title: mocks != stubs
-author: benniemosher
-permalink: /mocks-stubs/
 categories:
   - Test Driven Development
 tags:

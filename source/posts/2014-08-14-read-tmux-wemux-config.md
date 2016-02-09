@@ -1,7 +1,5 @@
 ---
 title: How to read your tmux/wemux config
-author: benniemosher
-permalink: /read-tmux-wemux-config/
 categories:
   - .dotfiles
   - tmux

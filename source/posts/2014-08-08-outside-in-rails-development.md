@@ -1,7 +1,5 @@
 ---
 title: Outside-in Rails development
-author: benniemosher
-permalink: /outside-in-rails-development/
 categories:
   - Test Driven Development
 tags:

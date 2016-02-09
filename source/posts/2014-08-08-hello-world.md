@@ -1,7 +1,5 @@
 ---
 title: Hello world!
-author: benniemosher
-permalink: /hello-world/
 categories:
   - Uncategorized
 tags:

@@ -1,7 +1,5 @@
 ---
 title: Things to think about before beginning a task
-author: benniemosher
-layout: post
 categories:
   - Learning
 tags:
