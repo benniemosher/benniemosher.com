@@ -8,7 +8,13 @@
   %body{class: page_classes}
     = partial 'navigation'
     = partial 'header'
-    = yield
+    - if is_blog_article?
+      %section
+        %article
+          %h1= current_article.title
+          = yield
+    - else
+      = yield
     = partial 'footer'
     %link{href: '//fonts.googleapis.com/css?family=Raleway:700|Lato:400,400italic', rel: 'stylesheet', type: 'text/css'}/
     %link{href: '//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css', rel: 'stylesheet', type: 'text/css'}/

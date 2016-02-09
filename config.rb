@@ -5,8 +5,11 @@ Time.zone = 'America/Denver'
 # Formatters
 # ------------------------------------------------------------------------
 
-# Set up Haml and Markdown processors
+# Set up haml processor
 set :haml, ugly: true, format: :html5
+
+# Set up markdown processor
+set :markdown_engine, :redcarpet
 set :markdown, fenced_code_blocks: true, smartypants: true
 
 # ------------------------------------------------------------------------
@@ -54,6 +57,8 @@ activate :search_engine_sitemap
 activate :automatic_image_sizes
 
 set :partials_dir, 'partials'
+
+activate :syntax, line_numbers: true
 
 # ------------------------------------------------------------------------
 # Paths

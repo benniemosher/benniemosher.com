@@ -12,7 +12,7 @@ Categories are not a Groovy specific thing. From a quick google search I found t
 
 Since I am by no means a programming expert (yet, I will get there!), I will not try to completely explain categories instead I will just make some notes on the things that I learned about them during the pairing session. Categories do not add methods to the parent class at compile time like most other classes, instead it actually is adding them at runtime. This allows for the interpretor to basically layer the classes on top of each other. Let us look at an example our core class `Bob`:
 
-```
+```groovy
 class Bob
 {
   String drinkCoffee()
@@ -25,7 +25,7 @@ class Bob
 
 In our `Bob` class above, we have a method called `drinkCoffee`. In this method we simply create a string called `cup` and then set it to `'16 oz'`. We simply just then return our string `cup` at the end of the method. This is just a basic class and method, I am sure that your codebase is much more complex, as is the codebase at my work, however for this example we will keep it simple. Let us get our category on!
 
-```
+```groovy
 class Bill
 {
   use(Bob) {

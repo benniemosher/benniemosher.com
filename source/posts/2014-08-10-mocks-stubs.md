@@ -24,22 +24,22 @@ In general stubs will use state verification and mocks will uses behavior verifi
 
 You can often use mocks to test that a third-party service is called. Such as below:
 
-{% highlight ruby linenos %}
+```ruby
 third_party_mock.should_receive(:create).with(
     user_guid: user.guid,
     account_guid: account.guid,
     attr_1: attr_1,
     attr_2: attr_2
 )
-{% endhighlight %}
+```
 
 This allows us to make sure that the behavior is called and that the correct elements are sent with the call.
 
 You can often use stubs to fake out states of variables that that it returns the required data. You can stub out how many elements are returned per page for pagination like so:
 
-{% highlight ruby linenos %}
+```ruby
 ArticleController.any_instance.stub(:articles_per_page).and_return(1)
-{% endhighlight %}
+```
 
 This is nice because instead of having `articles_per_page = 10` and then have to generate 11 articles in your test, you can set it to be 1 and then you only have to create 2 articles to test that your pagination is working.
 
