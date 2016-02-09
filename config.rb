@@ -21,7 +21,7 @@ end
 
 activate :blog do |blog|
   blog.name = 'resume'
-  blog.prefix = 'resume'
+  blog.prefix = 'jobs'
 end
 
 # ------------------------------------------------------------------------
