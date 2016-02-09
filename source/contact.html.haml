@@ -1,4 +1,14 @@
 ---
 title: Contact Bennie Mosher
 ---
-%h1 Contact
+%section
+  %h1 Contact
+  %form{ action: 'https://getsimpleform.com/messages?form_api_token=74be46cb735709080417e91c958bbefa', method: 'post' }
+    -# the redirect_to is optional, the form will redirect to the referrer on submission
+    %input{ type: 'hidden', name: 'redirect_to', value: '<the complete return url e.g. http://fooey.com/thank-you.html>' }/
+    -# all your input fields here....
+    %input{ type: 'text', name: 'first_name' }/
+    %input{ type: 'text', name: 'last_name' }/
+    %input{ type: 'text', name: 'email_address' }/
+    %textarea{ name: 'message' }
+    %input{ type: 'submit', value: 'Send me a message' }/

@@ -1,4 +1,17 @@
 ---
+layout: layout
 title: Bennie Mosher's Blog
 ---
-%h1 Blog
+%section
+  - blog(:blog).articles.each do |post|
+    %article
+      %h2
+        %a{ href: post.url }= post.title
+      %h3
+        Posted on
+        %time= post.date.strftime('%b %e %Y')
+        in
+        = post.tags.to_sentence
+      = post.summary
+      %p
+        %a{ href: post.url } Read more.

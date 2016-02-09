@@ -1,7 +1,7 @@
 # Site wide settings
 site:
   root_url: https://benniemosher.com
-  title: Bennie Mosher - Problem Solver
+  title: Bennie Mosher - Software Engineer
   title_separator: " &mdash; "
   meta_description: Example description
   meta_keywords:

@@ -9,6 +9,7 @@ PreCommit:
       - 'libexec/**/*'
       - 'template-dir/hooks/**/*'
       - 'source/images/**/*'
+      - 'source/posts/**/*'
 
    HardTabs:
     enabled: true

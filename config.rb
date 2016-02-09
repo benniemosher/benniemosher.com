@@ -14,14 +14,14 @@ set :markdown, fenced_code_blocks: true, smartypants: true
 # ------------------------------------------------------------------------
 activate :blog do |blog|
   blog.name = 'blog'
-  blog.prefix = 'blog'
+  blog.prefix = 'posts'
   blog.paginate = true
   blog.per_page = 5
 end
 
-activate :blog do |blog|
-  blog.name = 'resume'
-  blog.prefix = 'jobs'
+activate :blog do |resume|
+  resume.name = 'resume'
+  resume.prefix = 'jobs'
 end
 
 # ------------------------------------------------------------------------
@@ -52,6 +52,8 @@ activate :search_engine_sitemap
 
 # Automatic image dimensions on image_tag helper (only works with local images)
 activate :automatic_image_sizes
+
+set :partials_dir, 'partials'
 
 # ------------------------------------------------------------------------
 # Paths
