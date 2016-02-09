@@ -77,7 +77,7 @@ configure :build do
   ignore 'javascripts/vendor/*'
 
   # Activate gzip compression
-  activate :gzip
+  # activate :gzip
 
   # Minify CSS
   activate :minify_css
