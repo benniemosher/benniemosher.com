@@ -13,11 +13,20 @@ section {
 aside {
   display: inline-block;
   width: 35%;
+
+  @include bp(iphone-6-plus) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 article {
   display: inline-block;
   width: 65%;
+
+  @include bp(iphone-6-plus) {
+    width: 100%;
+  }
 
   &:nth-of-type(1) {
     border-top: 3px solid $black;

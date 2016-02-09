@@ -8,17 +8,40 @@ footer {
   padding: 20px 20px 0;
   width: 90%;
 
+  @include bp(iphone-6-landscape) {
+    display: block;
+  }
+
   p {
     color: $silver-chalice;
     height: 32px;
     line-height: 32px;
     margin: 0;
+
+    @include bp(ipad-mini) {
+      font-size: 0.9em;
+    }
+
+    @include bp(iphone-6-plus-landscape) {
+      font-size: 0.8em;
+    }
+
+    @include bp(iphone-6-landscape) {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 
   ul {
     height: 32px;
     margin: 0;
     padding: 0;
+
+    @include bp(iphone-6-landscape) {
+      margin: 0 auto;
+      display: table;
+    }
   }
 
   li {

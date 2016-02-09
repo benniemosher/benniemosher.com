@@ -10,6 +10,10 @@ nav {
     margin-right: auto;
     max-width: 840px;
     width: 90%;
+
+    @include bp(iphone-6-plus) {
+      justify-content: flex-start;
+    }
   }
 
   span {
@@ -20,6 +24,18 @@ nav {
     color: $white;
     display: inline-block;
     padding: 15px 30px;
+
+    @include bp(iphone-6-plus) {
+      padding: 15px 28px;
+    }
+
+    @include bp(iphone-6) {
+      padding: 15px 24px;
+    }
+
+    @include bp(iphone-5) {
+      padding: 15px 18px;
+    }
 
     &:hover {
       background-color: $bright-gray;
