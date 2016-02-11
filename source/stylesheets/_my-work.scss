@@ -1,0 +1,17 @@
+.my-work {
+  h2,
+  h3 {
+    display: block;
+  }
+
+  h2 {
+    &:after {
+      content: none;
+    }
+  }
+
+  h3 {
+    clear: both;
+    margin-top: 10px;
+  }
+}
