@@ -1,5 +1,6 @@
 ---
 title: My Strength and Weaknesses to Date
+description: An exercise of inner reflection and true honesty.
 categories:
   - Learning
 tags:

@@ -1,5 +1,6 @@
 ---
 title: What is a category?
+description: Learning about Groovy's categories
 categories:
   - Learning
 tags:

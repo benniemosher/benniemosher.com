@@ -1,5 +1,6 @@
 ---
 title: Speeding up your tests by selectively persisting data
+description: Learn to benchmark your gems and selectively persist data
 categories:
   - Test Driven Development
 tags:

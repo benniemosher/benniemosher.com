@@ -1,5 +1,6 @@
 ---
 title: Learning React and Mocha
+description: My quest to learn React and Mocha without Grunt or Gulp
 categories:
   - Learning
 tags:

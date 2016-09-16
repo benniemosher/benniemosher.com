@@ -1,5 +1,6 @@
 ---
 title: Submitting Changes to my .dotfiles upstream
+description: How to submit changes to a repos upstream repository
 categories:
   - .dotfiles
   - Vim

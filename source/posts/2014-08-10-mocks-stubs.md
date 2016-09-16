@@ -1,5 +1,6 @@
 ---
 title: mocks != stubs
+description: Learn the difference between mocks and stubs
 categories:
   - Test Driven Development
 tags:

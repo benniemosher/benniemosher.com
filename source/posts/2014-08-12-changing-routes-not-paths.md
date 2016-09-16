@@ -1,5 +1,6 @@
 ---
 title: Changing routes not paths
+description: Easily change your routes file to have new URLs
 categories:
   - Rails
 tags:

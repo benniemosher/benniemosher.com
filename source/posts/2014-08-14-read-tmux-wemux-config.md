@@ -1,5 +1,6 @@
 ---
 title: How to read your tmux/wemux config
+description: A walk-down of reading your tmux/wemux config to enable you to quickly learn
 categories:
   - .dotfiles
   - tmux
