@@ -1,0 +1,35 @@
+{
+  "name": "Bennie Mosher - Software Engineer",
+  "short_name": "Bennie Mosher",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "All about Bennie Mosher the Software Engineer.",
+	"lang": "en-US",
+  "icons": [{
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=48",
+    "sizes": "48x48",
+    "type": "image/jpg"
+  }, {
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=72",
+    "sizes": "72x72",
+    "type": "image/jpg"
+  }, {
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=96",
+    "sizes": "96x96",
+    "type": "image/jpg"
+  }, {
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=144",
+    "sizes": "144x144",
+    "type": "image/jpg"
+  }, {
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=168",
+    "sizes": "168x168",
+    "type": "image/jpg"
+  }, {
+    "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=192",
+    "sizes": "192x192",
+    "type": "image/jpg"
+  }],
+  "prefer_related_applications": false
+}
