@@ -63,7 +63,7 @@ activate :livereload
 
 # Use Search Engine Sitemap
 set :url_root, data.config.site.root_url
-activate :search_engine_sitemap
+activate :sitemap, hostname: 'https://benniemosher.com'
 
 # User Bower to manage vendor scripts
 # activate :bower
