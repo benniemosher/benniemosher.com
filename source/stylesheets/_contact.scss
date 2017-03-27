@@ -21,7 +21,7 @@
     width: calc(100% - 30px);
 
     &:focus {
-      outline-color: $orange;
+      outline-color: $primary-color;
     }
 
     &::placeholder {
@@ -36,7 +36,7 @@
   }
 
   [type='submit'] {
-    background: $orange;
+    background: $primary-color;
     border: 0;
     color: $white;
     display: flex;

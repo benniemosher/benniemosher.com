@@ -12,7 +12,7 @@ PreCommit:
       - 'source/posts/**/*'
 
    HardTabs:
-    enabled: true
+    enabled: false
 
    RuboCop:
       enabled: true

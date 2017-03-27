@@ -1,11 +1,14 @@
 {
   "name": "Bennie Mosher - Software Engineer",
-  "short_name": "Bennie Mosher",
+  "short_name": "BAM",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#fff",
+  "background_color": "#1155cc",
+  "theme_color": "#1155cc",
   "description": "All about Bennie Mosher the Software Engineer.",
-	"lang": "en-US",
+  "lang": "en-US",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "icons": [{
     "src": "http://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?size=48",
     "sizes": "48x48",

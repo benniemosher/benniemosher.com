@@ -9,6 +9,7 @@ gem 'middleman-minify-html'
 gem 'middleman-search_engine_sitemap'
 gem 'middleman-smusher'
 gem 'middleman-syntax'
+gem 'middleman-deploy'
 
 gem 'haml_lint'
 gem 'overcommit'

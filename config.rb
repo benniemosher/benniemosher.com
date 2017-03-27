@@ -40,11 +40,26 @@ end
 # Extensions
 # ------------------------------------------------------------------------
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  # host and path *must* be set
+  deploy.host = 'benniemosher.com'
+  deploy.path = '/usr/share/nginx/html/benniemosher.com'
+  # user is optional (no default)
+  deploy.user = 'benniemosher'
+  # port is optional (default is 22)
+  # deploy.port  = 5309
+  # clean is optional (default is false)
+  deploy.clean = true
+  # flags is optional (default is -avze)
+  # deploy.flags = "-rltgoDvzO --no-p --del -e"
+end
+
 # Use LiveReload
 activate :livereload
 
 # Use autoprefixer
-activate :autoprefixer
+# activate :autoprefixer
 
 # Use Search Engine Sitemap
 set :url_root, data.config.site.root_url
