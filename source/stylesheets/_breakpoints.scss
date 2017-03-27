@@ -26,32 +26,23 @@ $ipad-mini-landscape: 1024px;
 
   @if $point == iphone-4-landscape-only {
     @media #{$bp-iphone-4-landscape-only} { @content; }
-  }
-  @else if $point == iphone-4-landscape {
+  } @else if $point == iphone-4-landscape {
     @media #{$bp-iphone-4-landscape} { @content; }
-  }
-  @else if $point == iphone-5 {
+  } @else if $point == iphone-5 {
     @media #{$bp-iphone-5} { @content; }
-  }
-  @else if $point == iphone-5-landscape {
+  } @else if $point == iphone-5-landscape {
     @media #{$bp-iphone-5-landscape} { @content; }
-  }
-  @else if $point == iphone-6 {
+  } @else if $point == iphone-6 {
     @media #{$bp-iphone-6} { @content; }
-  }
-  @else if $point == iphone-6-landscape {
+  } @else if $point == iphone-6-landscape {
     @media #{$bp-iphone-6-landscape} { @content; }
-  }
-  @else if $point == iphone-6-plus {
+  } @else if $point == iphone-6-plus {
     @media #{$bp-iphone-6-plus} { @content; }
-  }
-  @else if $point == iphone-6-plus-landscape {
+  } @else if $point == iphone-6-plus-landscape {
     @media #{$bp-iphone-6-plus-landscape} { @content; }
-  }
-  @else if $point == ipad-mini {
+  } @else if $point == ipad-mini {
     @media #{$bp-ipad-mini} { @content; }
-  }
-  @else if $point == ipad-mini-landscape {
+  } @else if $point == ipad-mini-landscape {
     @media #{$bp-ipad-mini-landscape} { @content; }
   }
 

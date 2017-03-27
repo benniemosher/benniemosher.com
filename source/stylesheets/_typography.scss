@@ -35,7 +35,7 @@ a {
 }
 
 code {
-  background-color: rgba(0, 0, 0, .04);
+  background-color: $code-background-color;
   border-radius: 3px;
   font-size: 85%;
   margin: 0;

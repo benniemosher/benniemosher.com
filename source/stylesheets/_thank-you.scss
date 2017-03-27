@@ -1,7 +1,7 @@
 .thank-you {
   article {
     h2 {
-      &:after {
+      &::after {
         content: none;
       }
     }

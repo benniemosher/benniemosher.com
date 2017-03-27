@@ -15,8 +15,8 @@ aside {
   width: 35%;
 
   @include bp(iphone-6-plus) {
-    width: 100%;
     margin-bottom: 20px;
+    width: 100%;
   }
 }
 
@@ -46,28 +46,28 @@ body:not(.resume) {
 .thank-you {
   section {
     justify-content: flex-start;
+  }
 
-    aside {
-      span {
-        font-family: 'Raleway', sans-serif;
-        font-size: 1rem;
-        font-weight: bold;
-        line-height: 1.15;
-      }
+  aside {
+    span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.15;
+    }
 
-      address {
-        font-family: 'Lato', sans-serif;
-        font-size: .8em;
-        font-style: normal;
-        margin-bottom: .8rem;
-        width: 120px;
-      }
+    address {
+      font-family: 'Lato', sans-serif;
+      font-size: .8em;
+      font-style: normal;
+      margin-bottom: .8rem;
+      width: 120px;
+    }
 
-      a {
-        display: block;
-        font-family: 'Lato', sans-serif;
-        font-size: .8em;
-      }
+    a {
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: .8em;
     }
   }
 

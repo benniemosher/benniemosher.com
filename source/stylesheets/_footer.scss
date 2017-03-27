@@ -19,17 +19,17 @@ footer {
     margin: 0;
 
     @include bp(ipad-mini) {
-      font-size: 0.9em;
+      font-size: .9em;
     }
 
     @include bp(iphone-6-plus-landscape) {
-      font-size: 0.8em;
+      font-size: .8em;
     }
 
     @include bp(iphone-6-landscape) {
-      width: 100%;
       margin-bottom: 20px;
       text-align: center;
+      width: 100%;
     }
   }
 
@@ -39,8 +39,8 @@ footer {
     padding: 0;
 
     @include bp(iphone-6-landscape) {
-      margin: 0 auto;
       display: table;
+      margin: 0 auto;
     }
   }
 

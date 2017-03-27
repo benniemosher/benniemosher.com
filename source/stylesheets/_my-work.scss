@@ -5,7 +5,7 @@
   }
 
   h2 {
-    &:after {
+    &::after {
       content: none;
     }
   }

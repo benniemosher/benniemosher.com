@@ -6,7 +6,8 @@ header {
     margin: 0;
   }
 
-  h2, .position {
+  h2,
+	.position {
     color: $primary-color;
     font-family: 'Raleway', sans-serif;
     font-size: 1.4em;
@@ -63,8 +64,8 @@ body:not(.resume) {
       width: auto;
 
       @include bp(iphone-6) {
-        width: calc(100% - 110px);
         margin-left: 10px;
+        width: calc(100% - 110px);
       }
     }
 
