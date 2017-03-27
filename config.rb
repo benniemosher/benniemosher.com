@@ -53,6 +53,7 @@ activate :deploy do |deploy|
   deploy.clean = true
   # flags is optional (default is -avze)
   # deploy.flags = "-rltgoDvzO --no-p --del -e"
+  deploy.build_before = true
 end
 
 # Use LiveReload
