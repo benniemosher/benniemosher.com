@@ -60,7 +60,9 @@ end
 activate :livereload
 
 # Use autoprefixer
-# activate :autoprefixer
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 versions', 'Explorer >= 9']
+end
 
 # Use Search Engine Sitemap
 set :url_root, data.config.site.root_url
