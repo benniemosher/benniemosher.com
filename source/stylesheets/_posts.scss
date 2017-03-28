@@ -10,10 +10,6 @@
 
   h2 {
     margin-bottom: 10px;
-
-    &::after {
-      content: none;
-    }
   }
 
   .highlight {

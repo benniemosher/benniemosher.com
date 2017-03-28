@@ -18,7 +18,7 @@ section {
   }
 
   span {
-    font-family: 'Raleway', sans-serif;
+
     font-size: 1em;
     font-weight: bold;
   }
@@ -26,7 +26,7 @@ section {
 
 article {
   align-self: flex-end;
-  font-family: 'Lato', sans-serif;
+
   margin-bottom: 20px;
 
   &:nth-last-of-type(1) {
@@ -36,19 +36,15 @@ article {
   h2 {
     color: $black;
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 0;
-
-    &::after {
-      content: ' / ';
-    }
   }
 
   h3 {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+
     font-size: 1.2em;
     font-weight: normal;
   }
@@ -56,7 +52,7 @@ article {
   h4 {
     color: $gray;
     display: block;
-    font-family: 'Lato', sans-serif;
+
     font-size: 1em;
     font-weight: normal;
     line-height: 1.25;
