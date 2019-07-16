@@ -22,13 +22,28 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username: jekyll
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
+theme: plainwhite
+# remote-theme: thelehhman/plainwhite-jekyll
 plugins:
   - jekyll-feed
+
+plainwhite:
+  name: Bennie Mosher
+  tagline: Software Engineer
+  date_format: "%b %-d, %Y"
+  analytics_id: "UA-43449336-1"
+  disqus_shortname: benniemosher-1
+  show_excerpts: true
+
+  social_links:
+    twitter: benniemosher
+    github: benniemosher
+    linkedIn: in/benniemosher # format: locale/username
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
