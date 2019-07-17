@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.6"
-gem "plainwhite", path: "../plainwhite-jekyll"
+gem "plainwhite", git: "https://github.com/benniemosher/plainwhite-jekyll"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
