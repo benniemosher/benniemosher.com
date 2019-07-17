@@ -1,0 +1,8 @@
+---
+company: Nomo FOMO
+position: Chief Technology Officer (CTO)
+duration: June 2017 - March 2018
+location: Remote
+description: I led and organized all Agile practices, managed a team of seven developers to launch a beta in 5 months written in Ruby on Rails, advised company on all major technical decisions, and I organized and orchestrated all architecture for the platform.
+hide_from_sitemap: true
+---

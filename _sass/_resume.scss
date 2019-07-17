@@ -1,0 +1,10 @@
+.resume {
+  article {
+    border-bottom: 1px solid #ececec;
+    padding: 1rem 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

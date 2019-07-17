@@ -1,0 +1,8 @@
+---
+company: Nutrien
+position: Senior Cloud Engineer
+duration: January 2018 - Present
+location: Loveland, CO
+description: I continuously evolved entirely cloud based CI/CD pipelines and solution delivery via AWS and a cloud only tool set provisioned and maintained via infrastructure as code (IaC) in Terraform. I was responsible for availability, scalability, performance, security and transparency through monitoring, reporting, and collaboration. I was the lead on developer enablement through continuously evolving the architecture to accelerate velocity, quality, and recovery.
+hide_from_sitemap: true
+---
