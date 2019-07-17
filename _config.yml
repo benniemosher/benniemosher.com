@@ -38,8 +38,8 @@ plainwhite:
   sitemap: true
 
   navigation:
-    - title: About
-      url: "/about"
+    - title: My work
+      url: "/my-work"
     - title: Resume
       url: "/resume"
 
