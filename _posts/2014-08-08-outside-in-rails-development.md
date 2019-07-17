@@ -3,11 +3,11 @@ layout: post
 title: Outside-in Rails development
 description: How to think like a client and write tests before application code
 categories:
-  - Test Driven Development
+  - TDD
 tags:
   - learning
   - tdd
-  - test driven development
+  - test-driven-development
   - thoughtbot
 ---
 

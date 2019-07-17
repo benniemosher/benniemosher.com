@@ -3,11 +3,11 @@ layout: post
 title: mocks != stubs
 description: Learn the difference between mocks and stubs
 categories:
-  - Test Driven Development
+  - TDD
 tags:
   - learning
   - tdd
-  - test driven development
+  - test-driven-development
   - thoughtbot
 ---
 
