@@ -24,9 +24,7 @@ github_username: benniemosher
 
 # Build settings
 markdown: kramdown
-# theme: minima
 theme: plainwhite
-# remote-theme: thelehhman/plainwhite-jekyll
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -36,9 +34,14 @@ plainwhite:
   tagline: Software Engineer
   date_format: "%b %-d, %Y"
   analytics_id: "UA-43449336-1"
-  disqus_shortname: benniemosher-1
-  show_excerpts: true
+  disqus_shortname: "benniemosher-1"
   sitemap: true
+
+  navigation:
+    - title: About
+      url: "/about"
+    - title: Resume
+      url: "/resume"
 
   social_links:
     twitter: benniemosher
