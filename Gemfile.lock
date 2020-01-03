@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:benniemosher/plainwhite-jekyll.git
+  remote: https://github.com/benniemosher/plainwhite-jekyll.git
   revision: 2244b08c6dd6036b4e1ad90bddc9bab447be4547
   specs:
     plainwhite (0.9)
