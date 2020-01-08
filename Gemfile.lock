@@ -1,5 +1,6 @@
-PATH
-  remote: ../plainwhite-jekyll
+GIT
+  remote: https://github.com/benniemosher/plainwhite-jekyll.git
+  revision: 857af4f1ee7dee586c13e2ba7342222bcfa0e67d
   specs:
     plainwhite (0.10)
       jekyll (~> 3.8.6)
