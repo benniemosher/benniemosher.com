@@ -1,9 +1,9 @@
-GIT
-  remote: https://github.com/benniemosher/plainwhite-jekyll.git
-  revision: 2244b08c6dd6036b4e1ad90bddc9bab447be4547
+PATH
+  remote: ../plainwhite-jekyll
   specs:
-    plainwhite (0.9)
+    plainwhite (0.10)
       jekyll (~> 3.8.6)
+      jekyll-archives (~> 2.2.1)
       jekyll-seo-tag (~> 2.6.1)
 
 GEM
@@ -35,6 +35,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-archives (2.2.1)
+      jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.13.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (1.5.2)

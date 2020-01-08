@@ -13,6 +13,7 @@ theme: plainwhite
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-archives
 
 plainwhite:
   name: Bennie Mosher
@@ -36,3 +37,13 @@ plainwhite:
 
 collections:
   - jobs
+
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    year: "/:year/"
+    month: "/:year/:month/"
+    day: "/:year/:month/:day/"
+    tag: "/tag/:name/"
+    category: "/category/:name/"
