@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/benniemosher/plainwhite-jekyll.git
-  revision: 857af4f1ee7dee586c13e2ba7342222bcfa0e67d
+  revision: f8c2ed599645da914732d8706679ea3eec768d5b
   specs:
     plainwhite (0.10)
       jekyll (~> 3.8.6)
@@ -54,7 +54,7 @@ GEM
     mercenary (0.3.6)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (4.0.2)
+    public_suffix (4.0.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -77,7 +77,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.6)
-  jekyll-feed (~> 0.6)
+  jekyll-feed
   jekyll-seo-tag
   plainwhite!
   tzinfo (~> 1.2)
