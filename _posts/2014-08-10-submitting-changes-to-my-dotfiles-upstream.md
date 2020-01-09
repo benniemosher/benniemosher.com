@@ -3,15 +3,15 @@ layout: post
 title: Submitting Changes to my .dotfiles upstream
 description: How to submit changes to a repos upstream repository
 categories:
-  - .dotfiles
-  - Vim
+- ".dotfiles"
+- Vim
 tags:
-  - dotfiles
-  - learning
-  - thoughtbot
-  - vim
----
+- dotfiles
+- learning
+- thoughtbot
+- vim
 
+---
 At work I have started to use Vim more often. In doing so I have adapted my coworker&#8217;s dotfiles repo (which is based off of thoughtbot&#8217;s dotfiles) and started using it for myself. I have forked it [here](https://github.com/benniemosher/dotfiles). To install read the [README.md](https://github.com/benniemosher/dotfiles/blob/master/README.md) or [thoughtbot&#8217;s install blog post](http://robots.thoughtbot.com/manage-team-and-personal-dotfiles-together-with-rcm).
 
 I recently hit a problem with using these dotfiles in that I wanted to make some changes to my setup but still wanted to be able to contribute things back to my coworkers dotfiles. So, I started to do some research and was able to get ahold of [@r00k](https://twitter.com/r00k) and [@croaky](https://twitter.com/croaky) on Twitter and [@croaky](https://twitter.com/croaky) mapped me to this [blog post from thoughtbot](http://robots.thoughtbot.com/keeping-a-github-fork-updated).
