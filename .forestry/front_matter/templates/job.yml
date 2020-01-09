@@ -22,6 +22,7 @@ fields:
   name: hide_from_sitemap
   label: hide_from_sitemap
 pages:
+- _jobs/2013-02-01-showmobile.html.markdown
 - _jobs/2013-06-01-carepilot.html.markdown
 - _jobs/2013-12-01-ncc-group.html.markdown
 - _jobs/2014-01-01-fluentstream-technologiess.html.markdown
