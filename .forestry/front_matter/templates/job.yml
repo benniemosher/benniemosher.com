@@ -21,3 +21,5 @@ fields:
 - type: boolean
   name: hide_from_sitemap
   label: hide_from_sitemap
+pages:
+- _jobs/2018-01-01-nutrien.html.markdown
