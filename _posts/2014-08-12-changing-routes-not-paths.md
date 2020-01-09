@@ -3,14 +3,14 @@ layout: post
 title: Changing routes not paths
 description: Easily change your routes file to have new URLs
 categories:
-  - Rails
+- Rails
 tags:
-  - gorails
-  - learning
-  - rails
-  - routes
----
+- gorails
+- learning
+- rails
+- routes
 
+---
 So this morning I watched [GoRails.com&#8217;s screencast &#8216;A Look Into Routing&#8216;](https://gorails.com/episodes/a-look-into-routing) and learned something fantastic about your routes file.
 
 In the podcast Chris (at least that is who sent me the email about this podcast), is describing how to make a routes folder for a book store. He eventually describes and gets to this point in the code:
