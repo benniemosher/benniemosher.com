@@ -24,6 +24,7 @@ fields:
   label: tags
 pages:
 - _posts/2014-08-08-hello-world.md
+- _posts/2014-08-08-outside-in-rails-development.md
 - _posts/2014-08-10-mocks-stubs.md
 - _posts/2014-08-12-changing-routes-not-paths.md
 - _posts/2014-08-14-read-tmux-wemux-config.md
