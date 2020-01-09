@@ -22,6 +22,7 @@ fields:
   name: hide_from_sitemap
   label: hide_from_sitemap
 pages:
+- _jobs/2016-04-1-panda-strike.html.markdown
 - _jobs/2017-06-01-nomofomo.html.markdown
 - _jobs/2017-07-01-nbcuniversal-media.html.markdown
 - _jobs/2018-01-01-nutrien.html.markdown
