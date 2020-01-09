@@ -1,0 +1,22 @@
+---
+label: job
+hide_body: true
+fields:
+- type: text
+  name: company
+  label: company
+- type: text
+  name: position
+  label: position
+- type: text
+  name: duration
+  label: duration
+- type: text
+  name: location
+  label: location
+- type: textarea
+  name: description
+  label: description
+- type: boolean
+  name: hide_from_sitemap
+  label: hide_from_sitemap
