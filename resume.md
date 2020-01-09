@@ -1,9 +1,13 @@
 ---
 layout: resume
 title: Resume
-permalink: /resume/
----
+permalink: "/resume/"
+menu:
+  main:
+    identifier: resume
+    weight: 1
 
+---
 {% for job in site.jobs reversed %}
 
 <article>
