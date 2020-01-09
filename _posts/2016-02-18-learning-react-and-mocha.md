@@ -3,11 +3,11 @@ layout: post
 title: Learning React and Mocha
 description: My quest to learn React and Mocha without Grunt or Gulp
 categories:
-  - Learning
+- Learning
 tags:
-  - learning
----
+- learning
 
+---
 In my recent job search I have been getting turned down by a lot of employers because I do not have React or Angular experience. Today I decided to learn one and build a demo app that can prove that I know the framework and can get work done. After research and tallying up denial emails, I decided that React was looking more needed and that it was smarter to learn React. So, I set out to do it. I read a [article](http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/) that explain why React was superior to React and I was hooked. Mind you I finished this at 0200, when I should of been cozyed up against my wife, dogs, and my daughter in bed. However, now I have the damn learning fever that I get when I am learning something new.
 
 I knew that after learning the basics of states, that I needed to learn someway to write React in a TDD environment. The article mentioned above, as well as the [documentation](http://facebook.github.io/react/docs/getting-started.html) provided by Facebook did not mention this. So, I did the normal developer thing, I Googled it. Which brought me to this little gem of a [blog post](http://www.bebetterdeveloper.com/coding/getting-started-react-mocha.html). The content is incredible, and it in fact does work and taught me how to get Mocha running with React. However, if you look at the dependencies there, it lists Gulp as a dependency.
