@@ -1,6 +1,7 @@
 ---
 label: job
 hide_body: true
+display_field: company
 fields:
 - type: text
   name: company
