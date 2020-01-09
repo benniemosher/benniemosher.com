@@ -22,6 +22,7 @@ fields:
   name: hide_from_sitemap
   label: hide_from_sitemap
 pages:
+- _jobs/2007-01-01-digital-enterprises.html.markdown
 - _jobs/2007-07-01-einstein-industries.html.markdown
 - _jobs/2011-10-01-robert-half-technology.html.markdown
 - _jobs/2012-08-01-collisionsync.html.markdown
