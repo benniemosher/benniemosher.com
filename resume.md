@@ -5,7 +5,7 @@ permalink: "/resume/"
 menu:
   main:
     identifier: resume
-    weight: 1
+    weight: 2
 
 ---
 {% for job in site.jobs reversed %}

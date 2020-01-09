@@ -6,7 +6,7 @@ menu:
   main:
     title: My Work
     identifier: my-work
-    weight: 2
+    weight: 3
 
 ---
 ## My Personal Site
