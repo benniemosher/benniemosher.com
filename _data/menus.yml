@@ -1,0 +1,10 @@
+---
+main:
+  - url: my-work
+    title: My Work
+    identifier: my-work
+  - url: resume
+    title: Resume
+    identifier: resume
+---
+

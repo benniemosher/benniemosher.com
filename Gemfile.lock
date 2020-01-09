@@ -1,10 +1,11 @@
 GIT
   remote: https://github.com/benniemosher/plainwhite-jekyll.git
-  revision: f8c2ed599645da914732d8706679ea3eec768d5b
+  revision: 3e81b2196bac75bdbcd120107ccc8c1164a4499b
   specs:
-    plainwhite (0.10)
+    plainwhite (0.11)
       jekyll (~> 3.8.6)
       jekyll-archives (~> 2.2.1)
+      jekyll-menus (~> 0.6.1)
       jekyll-seo-tag (~> 2.6.1)
 
 GEM
@@ -40,6 +41,8 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.13.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-menus (0.6.1)
+      jekyll (>= 3.6, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
@@ -78,6 +81,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.8.6)
   jekyll-feed
+  jekyll-menus
   jekyll-seo-tag
   plainwhite!
   tzinfo (~> 1.2)
