@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.6"
+# gem "plainwhite", git: "https://github.com/thelehhman/plainwhite-jekyll"
 gem "plainwhite", git: "https://github.com/benniemosher/plainwhite-jekyll.git"
 # gem "plainwhite", path: "../plainwhite-jekyll"
 
