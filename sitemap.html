@@ -7,22 +7,23 @@ menu:
     weight: 4
 
 ---
+<h1 class="page-title">Sitemap</h1>
 <ul class="posts">
-  <li><h1 id="posts-label">Posts</h1></li>
+  <li><h2 class="posts-label">Posts</h2></li>
   {% for post in site.posts %}
     {% unless post.published == false %}
       <li>
         <a class="post-link" href="{{ site.url }}{{ post.url }}">
-          <h2 class="post-title">{{ post.title }}</h2>
+          <h3 class="post-title">{{ post.title }}</h3>
         </a>
       </li>
     {% endunless %}
   {% endfor %}
-  <li><h1 id="posts-label">Pages</h1></li>
+  <li><h2 class="posts-label">Pages</h2></li>
   {% for item in site.menus.main %}
     <li>
       <a class="post-link" href="{{ site.url }}/{{ item.url | remove: "index.html" }}">
-        <h2 class="post-title">{{ item.title }}</h2>
+        <h3 class="post-title">{{ item.title }}</h3>
       </a>
     </li>
   {% endfor %}
