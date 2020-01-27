@@ -1,11 +1,12 @@
 GIT
   remote: https://github.com/benniemosher/plainwhite-jekyll.git
-  revision: 07f15981219fde300449d6a6974c51b44c20b4a0
+  revision: a754c1eedfacc97cbdac79d86d417ef3e04c5cd4
   specs:
     plainwhite (1.0)
       jekyll (>= 3.7.3)
       jekyll-archives (>= 2.2.1)
       jekyll-menus (>= 0.6.1)
+      jekyll-minifier (>= 0.1.2)
       jekyll-seo-tag (>= 2.1.0)
 
 GEM
@@ -15,12 +16,15 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
+    cssminify2 (2.0.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    execjs (2.7.0)
     ffi (1.12.1)
     forwardable-extended (2.6.0)
+    htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
@@ -43,12 +47,21 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-menus (0.6.1)
       jekyll (>= 3.6, < 5.0)
+    jekyll-minifier (0.1.10)
+      cssminify2 (~> 2.0)
+      htmlcompressor (~> 0.4)
+      jekyll (>= 3.5)
+      json-minify (~> 0.0.3)
+      uglifier (~> 4.1)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    json (2.3.0)
+    json-minify (0.0.3)
+      json (> 0)
     kramdown (1.17.0)
     liquid (4.0.3)
     listen (3.2.1)
@@ -68,12 +81,8 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    thread_safe (0.3.6)
-    tzinfo (1.2.6)
-      thread_safe (~> 0.1)
-    tzinfo-data (1.2019.3)
-      tzinfo (>= 1.0.0)
-    wdm (0.1.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
 
 PLATFORMS
   ruby
@@ -82,11 +91,9 @@ DEPENDENCIES
   jekyll (~> 3.8.6)
   jekyll-feed
   jekyll-menus
+  jekyll-minifier
   jekyll-seo-tag
   plainwhite!
-  tzinfo (~> 1.2)
-  tzinfo-data
-  wdm (~> 0.1.0)
 
 BUNDLED WITH
    2.0.2

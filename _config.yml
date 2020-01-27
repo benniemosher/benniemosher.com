@@ -15,6 +15,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-archives
   - jekyll-menus
+  - jekyll-minifier
 
 plainwhite:
   name: Bennie Mosher
@@ -43,3 +44,9 @@ jekyll-archives:
     day: "/:year/:month/:day/"
     tag: "/tag/:name/"
     category: "/category/:name/"
+
+jekyll-minifier:
+  compress_js_templates: true
+  compress_javascript: true
+  uglifier_args:
+    harmony: true
