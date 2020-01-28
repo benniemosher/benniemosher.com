@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/benniemosher/plainwhite-jekyll.git
-  revision: 5aafcaf503c0e4e4832c82d7e5f1137f36f1b0f7
+  revision: 4717b32dc773e8d34306ad29a5cd8795224c8dfa
   specs:
     plainwhite (1.0)
       jekyll (>= 3.7.3)
