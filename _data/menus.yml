@@ -1,1 +1,16 @@
---- {}
+---
+social:
+  - url: https://twitter.com/benniemosher
+    title: Twitter
+    identifier: twitter
+  - url: https://github.com/benniemosher
+    title: Github
+    identifier: github
+  - url: https://linkedin.com/in/benniemosher
+    title: LinkedIn
+    identifier: linkedin
+  - url: https://bennieomsher.com/rss.xml
+    title: RSS
+    identifier: rss
+---
+

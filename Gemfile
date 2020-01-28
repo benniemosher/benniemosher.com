@@ -1,14 +1,11 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.6"
-
-# gem "plainwhite", git: "https://github.com/thelehhman/plainwhite-jekyll"
-gem "plainwhite", git: "https://github.com/benniemosher/plainwhite-jekyll.git"
-# gem "plainwhite", path: "../plainwhite-jekyll"
+gem "jekyll", "~> 4.0.0"
 
 group :jekyll_plugins do
+  gem "jekyll-archives"
   gem "jekyll-feed"
-  gem "jekyll-seo-tag"
   gem "jekyll-menus"
   gem "jekyll-minifier"
+  gem "jekyll-seo-tag"
 end

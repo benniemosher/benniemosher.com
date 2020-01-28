@@ -1,0 +1,19 @@
+---
+layout: default
+title: Categories
+---
+
+<main>
+  {%- for category in site.categories -%}
+    {%- assign category_name = category | first -%}
+    <h1 id="{{ category_name | slugize }}">
+      Posts in the "{{ category_name }}" category
+    </h1>
+
+    {%- for post in site.categories[category_name] -%}
+      {%- include post.html -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- include footer.html -%}
+</main>

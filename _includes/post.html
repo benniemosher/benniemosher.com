@@ -1,0 +1,20 @@
+{%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+
+<article>
+  <h2>
+    <a href="{{ post.url | relative_url }}">
+      {{post.title | escape }}
+    </a>
+  </h2>
+  <h3>
+    <a href="{{ site.url }}/{{ post.date | date: "%Y/%m" }}">
+      {{ post.date | date: date_format }}
+    </a>
+  </h3>
+  {{ post.excerpt }}
+  <p>
+    <a href="{{ post.url | relative_url }}" class="read-more">
+      Read More
+    </a>
+  </p>
+</article>

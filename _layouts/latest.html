@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<main>
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    {%- for post in site.posts -%}
+      {%- include post.html -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- include footer.html -%}
+</main>

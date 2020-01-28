@@ -1,8 +1,7 @@
 ---
-layout: home
+layout: latest
 menu:
   main:
     weight: 1
-    title: Home
-
+    title: Latest
 ---

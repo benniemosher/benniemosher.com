@@ -1,0 +1,15 @@
+{%- if site.menus.main -%}
+  <nav>
+    <ul>
+      {% for item in site.menus.main %}
+        {%- if page.url != item.url -%}
+          <li>
+        {%- else -%}
+          <li class="current">
+        {%- endif -%}
+            <a href="{{site.url}}/{{ item.url }}">{{ item.title }}</a>
+          </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{%- endif -%}

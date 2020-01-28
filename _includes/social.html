@@ -1,0 +1,11 @@
+{%- if site.menus.social -%}
+  <ul class="socials">
+    {% for item in site.menus.social %}
+      <li>
+        <a href="{{ item.url }}" title="{{ item.title }}">
+          <i class="icon-{{ item.identifier }}"></i>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{%- endif -%}

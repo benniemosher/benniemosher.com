@@ -1,9 +1,19 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" href="{{ "/assets/me.css" | relative_url }}">
-<div class="post-container">
-  <div class="post resume">
-    {{ content }}
-  </div>
-</div>
+
+<main>
+  {% for job in site.jobs reversed %}
+
+    <article>
+      <h2>{{ job.company }}</h2>
+      <h3>{{ job.position }}</h3>
+      <h4>{{ job.duration }},
+        {{ job.location }}</h4>
+      <p>{{ job.description }}</p>
+    </article>
+
+  {% endfor %}
+
+  {%- include footer.html -%}
+</main>

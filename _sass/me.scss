@@ -1,1 +1,10 @@
+$primary-color: #3b4252;
+$secondary-color: #88c0d0;
+
+@import "normalize";
+@import "fonts";
 @import "resume";
+@import "header";
+@import "main";
+@import "post";
+@import "footer";

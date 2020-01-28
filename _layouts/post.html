@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+
+<main>
+  <article>
+    <h2>
+      {{page.title | escape }}
+    </h2>
+    <h3>
+      {{ page.date | date: date_format }}
+    </h3>
+    {{ page.content }}
+  </article>
+
+  {%- include footer.html -%}
+</main>

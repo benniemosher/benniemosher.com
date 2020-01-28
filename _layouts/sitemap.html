@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<main>
+  <h1>Sitemap</h1>
+
+  <h2>Posts</h2>
+
+  {%- for post in site.posts -%}
+    <ul>
+      {% unless post.published == false %}
+        <li>
+          <a href="{{ post.url | relative_url }}">
+            {{post.title | escape }}
+          </a>
+        </li>
+      {% endunless %}
+    </ul>
+  {%- endfor -%}
+
+  <h2>Pages</h2>
+
+  <ul>
+    {% for page in site.menus.main %}
+      <li>
+        <a href="{{ page.url | relative_url | remove: "index.html" }}">
+          {{page.title | escape }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</main>
