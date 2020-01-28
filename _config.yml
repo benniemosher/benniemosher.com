@@ -24,7 +24,7 @@ plainwhite:
   analytics_id: "UA-43449336-1"
   disqus_shortname: "benniemosher-1"
   sitemap: true
-  logo: https://www.gravatar.com/avatar/cfa63d2ac1df40f47b3855327d3a0924?s=200
+  logo: /assets/img/portfolio.jpg
 
   social_links:
     twitter: benniemosher
@@ -46,7 +46,5 @@ jekyll-archives:
     category: "/category/:name/"
 
 jekyll-minifier:
-  compress_js_templates: true
-  compress_javascript: true
   uglifier_args:
     harmony: true
