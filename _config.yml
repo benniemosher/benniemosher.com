@@ -13,18 +13,14 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
   - jekyll-archives
   - jekyll-menus
   - jekyll-minifier
 
-# plainwhite:
-#   name: Bennie Mosher
-#   tagline: Software Engineer
 date_format: "%b %-d, %Y"
 #   analytics_id: "UA-43449336-1"
 #   disqus_shortname: "benniemosher-1"
-#   sitemap: true
-#   logo: /assets/img/portfolio.jpg
 
 collections:
   - jobs
