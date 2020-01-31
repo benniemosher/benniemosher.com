@@ -44,6 +44,10 @@ header {
   &.header-image--on {
     opacity: 1;
   }
+
+  @media only screen and (max-width: 768px) {
+    background-position: center top;
+  }
 }
 
 .header-overlay {
