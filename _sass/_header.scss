@@ -46,6 +46,10 @@ header {
   }
 
   @media only screen and (max-width: 768px) {
+    background-position: center -105px;
+  }
+
+  @media only screen and (max-width: 414px) {
     background-position: center top;
   }
 }
