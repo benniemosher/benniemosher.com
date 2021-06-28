@@ -1,8 +1,11 @@
+publish_mode: editorial_workflow
+site_url: https://benniemosher.com
+display_url: https://benniemosher.com
+logo_url: https://benniemosher.com/assets/img/icons/icon-512x512.png
+
 backend:
   name: git-gateway
   branch: main
-
-publish_mode: editorial_workflow
 
 media_library:
   name: cloudinary
@@ -34,6 +37,7 @@ collections:
     folder: "_jobs"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["title", "date", "duration"]
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Company", name: "company", widget: "string" }
