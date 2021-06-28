@@ -4,7 +4,11 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: assets/img/uploads
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: benniemosher
+    api_key: 824966451111661
 
 collections:
   - name: posts
