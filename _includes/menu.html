@@ -7,7 +7,11 @@
         {%- else -%}
           <li class="current">
         {%- endif -%}
-            <a href="{{site.url}}/{{ item.url }}">{{ item.title }}</a>
+            {% if jekyll.environment == "production" %}
+              <a href="{{ site.url}}{{ item.url }}">{{ item.title }}</a>
+            {% else %}
+              <a href="http://localhost:8888{{ item.url }}">{{ item.title }}</a>
+            {% endif %}
           </li>
       {% endfor %}
     </ul>

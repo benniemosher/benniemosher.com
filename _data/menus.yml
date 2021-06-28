@@ -9,7 +9,7 @@ social:
   - url: https://linkedin.com/in/benniemosher
     title: LinkedIn
     identifier: linkedin
-  - url: https://bennieomsher.com/rss.xml
+  - url: /feed.xml
     title: RSS
     identifier: rss
 ---

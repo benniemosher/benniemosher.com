@@ -1,12 +1,12 @@
 ---
 layout: post
-company: Oddball, Inc.
+company: Mailprotector
 position: Senior Software Engineer
-duration: August 2020 - November 2020
+start_date: November 2020
+end_date: Present
 location: Remote
-description: As part of the Veteran-facing Services Platform (VSP) on VA.gov, I
-  work to improve core features and enable other teams in support of the Digital
-  Services @ VA. Primarily working with Ruby, Rails, Javascript, Postgresql,
-  Redis, and AWS infrastructure.
+description: I worked to improve developer lifestyle by incorporating up-to-date
+  practices such as CI/CD, GitHub Actions, AWS ECS, and other modern-day DevOps
+  practices.
 hide_from_sitemap: true
 ---

@@ -1,9 +1,11 @@
 ---
 company: NBCUniversal Media, LLC
 position: Media Software Engineer
-duration: July 2017 - January 2018
+start_date: July 2017
+end_date: January 2018
 location: Denver, CO
-description: I helped develop JavaScript runners and jobs that were used to manage
+description:
+  I helped develop JavaScript runners and jobs that were used to manage
   assets in Asset Management Systems such as Mediator. I led and helped move the engineering
   team to a Test Driven Development culture. I solely developed the TDD environment
   for proprietary software using tools such as Jasmine, Vagrant, Rhino.js, Jenkins
@@ -11,5 +13,4 @@ description: I helped develop JavaScript runners and jobs that were used to mana
   to watch directories and make REST API calls when there is a file available to take
   action on.
 hide_from_sitemap: true
-
 ---

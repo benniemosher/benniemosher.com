@@ -41,7 +41,8 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Position", name: "position", widget: "string" }
-      - { label: "Duration", name: "duration", widget: "string" }
+      - { label: "Start Date", name: "start_date", widget: "string" }
+      - { label: "End Date", name: "end_date", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Hide", name: "hide_from_sitemap", widget: "boolean" }
