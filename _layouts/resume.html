@@ -9,7 +9,7 @@ layout: default
       <h2>{{ job.company }}</h2>
       <h3>{{ job.position }}</h3>
       {% assign end_date = job.end_date %}
-      <h4>{{ job.start_date | date: '%B %Y' }} - {{ end_date | date: '%B %Y', default: 'Present' }},
+      <h4>{{ job.start_date | date: '%B %Y' }} - {{ end_date | date: '%B %Y' | default: 'Present' }},
         {{ job.location }}</h4>
       <p>{{ job.description }}</p>
     </article>
