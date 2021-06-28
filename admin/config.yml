@@ -37,7 +37,7 @@ collections:
     folder: "_jobs"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    sortable_fields: ["start_date", "end_date"]
+    sortable_fields: ["start_date", "company"]
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Company", name: "company", widget: "string" }
@@ -49,7 +49,7 @@ collections:
           default: "",
           date_format: "MMMM YYYY",
           time_format: false,
-          picker_utc: false,
+          picker_utc: true,
         }
       - {
           label: "End Date",
@@ -57,9 +57,9 @@ collections:
           widget: "datetime",
           required: false,
           default: "",
-          date_format: "MMMM YYYY",
+          date_format: "MM YYYY",
           time_format: false,
-          picker_utc: false,
+          picker_utc: true,
         }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "markdown" }
