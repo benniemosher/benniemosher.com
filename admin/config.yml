@@ -7,8 +7,8 @@ publish_mode: editorial_workflow
 media_folder: assets/img/uploads
 
 collections:
-  - name: blog
-    label: "Blog"
+  - name: posts
+    label: "Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -16,16 +16,20 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - { label: "Categories", name: "categories", widget: "list" }
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "list",
+          default:
+            ["Uncategorized", "TDD", ".dotfiles", "Vim", "Rails", "Learning"],
+        }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: job
-    label: "Job"
+  - name: jobs
+    label: "Jobs"
     folder: "_jobs"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-      preview: false
     fields:
       - { label: "Company", name: "company", widget: "string" }
       - { label: "Position", name: "position", widget: "string" }
