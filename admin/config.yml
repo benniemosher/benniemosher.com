@@ -48,6 +48,7 @@ collections:
           widget: "datetime",
           default: "",
           date_format: "MMMM YYYY",
+          time_format: false,
           picker_utc: false,
         }
       - {
@@ -57,6 +58,7 @@ collections:
           required: false,
           default: "",
           date_format: "MMMM YYYY",
+          time_format: false,
           picker_utc: false,
         }
       - { label: "Location", name: "location", widget: "string" }
