@@ -47,7 +47,7 @@ collections:
           name: "start_date",
           widget: "datetime",
           default: "",
-          date_format: "MMMM YYYY",
+          date_format: "MM YYYY",
           time_format: false,
           picker_utc: true,
         }
