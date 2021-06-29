@@ -12,5 +12,18 @@ social:
   - url: /feed.xml
     title: RSS
     identifier: rss
+main:
+  - url: /
+    title: Latest
+    identifier: latest
+  - url: /resume
+    title: Resume
+    identifier: resume
+  - url: /my-work
+    title: My Work
+    identifier: mywork
+  - url: /sitemap
+    title: Sitemap
+    identifier: sitemap
 ---
 

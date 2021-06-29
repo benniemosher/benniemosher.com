@@ -1,6 +1,6 @@
-{%- if site.menus.social -%}
+{%- if site.data.navs.social -%}
   <ul class="socials">
-    {% for item in site.menus.social %}
+    {% for item in site.data.navs.social %}
       <li>
         <a href="{{ item.url }}" title="{{ item.title }}">
           <i class="icon-{{ item.identifier }}"></i>

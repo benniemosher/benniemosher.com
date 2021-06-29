@@ -1,18 +1,12 @@
-{%- if site.menus.main -%}
+{%- if site.data.navs.main -%}
   <nav>
     <ul>
-      {% for item in site.menus.main %}
+      {% for item in site.data.navs.main %}
         {%- if page.url != item.url -%}
           <li>
-        {%- else -%}
-          <li class="current">
-        {%- endif -%}
-            {% if jekyll.environment == "production" %}
-              <a href="{{ site.url}}{{ item.url }}">{{ item.title }}</a>
-            {% else %}
-              <a href="http://localhost:8888{{ item.url }}">{{ item.title }}</a>
-            {% endif %}
+            <a href="{{ item.url }}">{{ item.title }}</a>
           </li>
+        {%- endif -%}
       {% endfor %}
     </ul>
   </nav>

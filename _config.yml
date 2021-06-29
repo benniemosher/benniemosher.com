@@ -15,7 +15,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-archives
-  - jekyll-menus
   - jekyll-minifier
 
 date_format: "%b %-d, %Y"
@@ -38,3 +37,6 @@ jekyll-archives:
 jekyll-minifier:
   uglifier_args:
     harmony: true
+
+feed:
+  tags: false
