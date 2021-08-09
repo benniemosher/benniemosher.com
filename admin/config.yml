@@ -31,7 +31,6 @@ collections:
         valueField: "name"
         displayFields: ["name"]
         multiple: true
-      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: categories
