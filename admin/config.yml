@@ -35,7 +35,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: categories
     label: Categories
-    folder: data/categories/
+    folder: _data/categories.yml
     create: true
     slug: "{{name}}"
     identifier_field: name
