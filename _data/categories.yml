@@ -1,0 +1,8 @@
+catgories:
+  - name: General
+  - name: TDD
+  - name: .dotfiles
+  - name: VIM
+  - name: Rails
+  - name: tmux
+  - name: Learning
