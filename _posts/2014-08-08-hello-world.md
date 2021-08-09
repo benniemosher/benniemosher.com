@@ -3,7 +3,7 @@ layout: post
 title: Hello world!
 description: The regular ol' "Hello World!" post
 categories:
-  - Uncategorized
+  - General
 tags:
   - general
 ---
