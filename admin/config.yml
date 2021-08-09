@@ -23,15 +23,24 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
-      - {
-          label: "Categories",
-          name: "categories",
-          widget: "list",
-          default:
-            ["Uncategorized", "TDD", ".dotfiles", "Vim", "Rails", "Learning"],
-        }
+      - label: "Categories"
+        name: "categories"
+        widget: relation
+        collection: "categories"
+        searchFields: ["name"]
+        valueField: "name"
+        displayFields: ["name"]
+        multiple: true
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: categories
+    label: Categories
+    folder: data/categories/
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    fields:
+      - { name: name, label: Name }
   - name: jobs
     label: "Jobs"
     folder: "_jobs"
