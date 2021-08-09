@@ -3,14 +3,9 @@ layout: post
 title: Speeding up your tests by selectively persisting data
 description: Learn to benchmark your gems and selectively persist data
 categories:
-- TDD
-tags:
-- factory girl
-- learning
-- tdd
-- test-driven-development
-
+  - TDD
 ---
+
 I follow the [thoughtbot blog](http://robots.thoughtbot.com) very closely, and today they posted about [speeding up tests by selectively avoiding factory girl](http://robots.thoughtbot.com/speed-up-tests-by-selectively-avoiding-factory-girl). This was enlightening on multiple levels.
 
 ## Benchmarking their own gems

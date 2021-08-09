@@ -1,19 +1,14 @@
 ---
 layout: post
 title: How to read your tmux/wemux config
-description: A walk-down of reading your tmux/wemux config to enable you to quickly
+description:
+  A walk-down of reading your tmux/wemux config to enable you to quickly
   learn
 categories:
-- ".dotfiles"
-- tmux
-tags:
-- dotfiles
-- learning
-- thoughtbot
-- tmux
-- wemux
-
+  - .dotfiles
+  - tmux
 ---
+
 So, if you are using a fork of my dotfiles you will see that I have a tmux and wemux config file in there. I generally use wemux to do work, don&#8217;t ask me why but it is what was suggested by a coworker over tmux (maybe a post will be due soon on that). I have been reading a lot on how to use tmux and have been having some problems. Thoughtbot has a whole [trail on tmux](https://upcase.com/tmux) and has a lot of great information on that trail.
 
 I was reading through some of the post and getting discouraged very quickly. Everything in my dotfiles was mapped differntly then what thoughtbot had. I begain to think about this and realized that most of thoughtbot&#8217;s materials probably assume that you are using their [laptop](https://github.com/thoughtbot/laptop) setup. What if you are not using their setup? What if you are using a laptop from work that your boss set up for you so that you can have the same setup as the rest of the team, as to make pairing a lot easier. How do you learn the key bindings to things like vim or tmux? Well I have come up with a small tip: **_READ THE CONFIG FILES!_**

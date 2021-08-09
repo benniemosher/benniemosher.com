@@ -34,34 +34,17 @@ collections:
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "categories"
-    label: "Categories"
+  - name: categories
+    label: Categories
     editor:
       preview: false
-    files:
-      - label: "Categories"
-        name: "categories"
-        file: "_data/categories.yml"
-        fields:
-          - label: "Categories"
-            name: "catgories"
-            widget: "list"
-            fields:
-              - { name: name, label: Name }
+    folder: _data/categories/
+    create: true
+    slug: "{{name}}"
+    identifier_field: name
+    fields:
+      - { name: name, label: Name }
 
-  # - name: categories
-  #   label: Categories
-  #   editor:
-  #     preview: false
-  #   files:
-  #     - label: "Categories"
-  #       name: "categories"
-  #       file: "_data/categories.yml"
-  #       fields:
-  #         - { name: name, label: Name }
-  #   create: true
-  #   slug: "{{name}}"
-  #   identifier_field: name
   - name: jobs
     label: "Jobs"
     folder: "_jobs"

@@ -3,14 +3,9 @@ layout: post
 title: mocks != stubs
 description: Learn the difference between mocks and stubs
 categories:
-- TDD
-tags:
-- learning
-- tdd
-- test-driven-development
-- thoughtbot
-
+  - TDD
 ---
+
 In attempting to complete thoughtbot’s Testing trail, I read Martin Fowlers’s article, [“Mocks Aren&#8217;t Stubs”](http://martinfowler.com/articles/mocksArentStubs.html).
 
 I have been writing tests for about a year now and I have always just done Integration/Feature tests because they were easier, and I really didn&#8217;t know how to use mocks and stubs. This was okay until our test suite at work reached a few minutes to complete because of all the feature specs. Now that I have read Fowler&#8217;s article, I understand what they are now.

@@ -3,12 +3,9 @@ layout: post
 title: Things to think about before beginning a task
 description: How I learned to approach a task with agile thinking
 categories:
-- Learning
-tags:
-- oracle commerce
-- learning
-
+  - Learning
 ---
+
 When beginning a new feature task, it is good to take the time and sit back and think about your approach. Come up with your game plan. Your play book. You should start by asking yourself, "Where am I getting the data from?". This is probably one of the most key decisions that you can make before you get started. Are you getting data from more than one source? Grab a scratch piece of paper, or a blank text editor and start writing down some notes. Next question you should ask yourself is, "Is there options Out Of The Box (OOTB)?". Ask yourself, "Is there something in our ecosystem that I can use and just make it more robust? A class that I can just extend?". Most of the time it appears that this is the case. Which really, ultimately seems to make development a lot easier. You do not have to start over from scratch. You can just extend a class, or use a category, and add the data or methods that you need for your new feature. Take a few minutes to look through your existing code base. Check some things out, pseudo code, write notes, draw a mind map, do whatever you can find that allows you to wrap your head around the entire feature and how you are going to implement it.
 
 In our particular case, we were working on a feature where we needed to add image url data to the SKU object. So, we knew that we already had a core class that generated a custom Color object, so let's consider that our OOTB class that we can extend to make more robust. We also know that our data lived on the Color object's parent object of Product. Since we were working with Oracle Commerce (OC), my partner showed me a really easy way to view the data that is being delivered to any OC page. You can simply append this query string onto the URL and it will show you all the data, `?format=json`. Once you have the format though, at least in Google Chrome, it looks like just a giant unreadable string. Have no fear, my fellow engineer; there is an extension for that! I personally use [JSONView](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc), which will re-render the JSON into a readable format for you.
