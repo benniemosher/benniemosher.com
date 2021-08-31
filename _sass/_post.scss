@@ -27,4 +27,9 @@ article {
       background-color: lighten($secondary-color, 10%);
     }
   }
+
+  img {
+    width: 100%;
+    max-width: 1200px;
+  }
 }
