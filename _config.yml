@@ -40,3 +40,5 @@ jekyll-minifier:
 
 feed:
   tags: false
+
+include: [_redirects]
