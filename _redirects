@@ -2,3 +2,5 @@
 
 # Redirect default Netlify subdomain to primary domain
 https://benniemosher.netlify.com/* https://benniemosher.com/:splat 301!
+
+/uncategorized /general
