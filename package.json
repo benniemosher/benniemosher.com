@@ -3,6 +3,6 @@
     "workbox": "workbox"
   },
   "devDependencies": {
-    "workbox-cli": "^6.1.5"
+    "workbox-cli": "googlechrome/workbox#v6"
   }
 }
