@@ -7,4 +7,3 @@ vendor
 node_modules
 
 .jekyll-cache
-.netlify
