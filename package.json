@@ -3,6 +3,6 @@
     "workbox": "workbox"
   },
   "devDependencies": {
-    "workbox-cli": "^6.5.0"
+    "workbox-cli": "^6.5.4"
   }
 }
