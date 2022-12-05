@@ -31,6 +31,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/zone) | resource |
 
 ## Inputs
