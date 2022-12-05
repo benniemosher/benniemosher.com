@@ -11,6 +11,6 @@ resource "cloudflare_email_routing_catch_all" "this" {
 
   action {
     type  = "forward"
-    value = ["benniemosher+dev@github.com"]
+    value = ["${replace(each.value.name, ".", "+")}@github.com"]
   }
 }
