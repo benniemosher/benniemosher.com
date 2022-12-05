@@ -51,7 +51,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.5.1)
+    json (2.6.3)
     json-minify (0.0.3)
       json (> 0)
     kramdown (2.4.0)
@@ -94,7 +94,7 @@ DEPENDENCIES
   webrick
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.2.22
