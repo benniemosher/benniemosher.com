@@ -8,11 +8,3 @@ resource "cloudflare_zone" "this" {
   type       = try(each.value.type, "full")
   zone       = each.value.name
 }
-
-locals {
-  cloudflare-zones = [
-    {
-      name = "benniemosher.dev"
-    }
-  ]
-}
