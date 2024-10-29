@@ -1,4 +1,13 @@
 ---
 ---
 
-@import "me";
+@use "variables";
+
+@use "normalize";
+@use "fonts";
+@use "resume";
+@use "header";
+@use "main";
+@use "post";
+@use "footer";
+

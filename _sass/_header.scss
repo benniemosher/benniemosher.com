@@ -1,5 +1,7 @@
+@use 'variables';
+
 header {
-  background: $primary-color;
+  background: variables.$primary-color;
   box-sizing: border-box;
   clear: both;
   display: block;
