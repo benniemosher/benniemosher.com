@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "~> 3.1"
+ruby "~> 3"
 
 group :jekyll_plugins do
   gem "jekyll-archives"
@@ -10,5 +10,8 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
 end
 
-gem "webrick"
+gem "base64"
+gem "csv"
 gem "jekyll"
+gem "logger"
+gem "webrick"
