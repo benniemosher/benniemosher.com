@@ -1,3 +1,4 @@
+---
 publish_mode: editorial_workflow
 site_url: https://benniemosher.com
 display_url: https://benniemosher.com
@@ -20,9 +21,16 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "string"
       - label: "Categories"
         name: "categories"
         widget: relation
@@ -31,7 +39,9 @@ collections:
         valueField: "name"
         displayFields: ["name"]
         multiple: true
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
   - name: categories
     label: Categories
@@ -42,37 +52,49 @@ collections:
     slug: "{{name}}"
     identifier_field: name
     fields:
-      - { name: name, label: Name }
+      - name: name
+        label: Name
 
   - name: jobs
     label: "Jobs"
     folder: "_jobs"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    sortable_fields: ["start_date", "company"]
+    sortable_fields:
+      - "start_date"
+      - "company"
     fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Company", name: "company", widget: "string" }
-      - { label: "Position", name: "position", widget: "string" }
-      - {
-          label: "Start Date",
-          name: "start_date",
-          widget: "datetime",
-          default: "",
-          date_format: "MM YYYY",
-          time_format: false,
-          picker_utc: true,
-        }
-      - {
-          label: "End Date",
-          name: "end_date",
-          widget: "datetime",
-          required: false,
-          default: "",
-          date_format: "MM YYYY",
-          time_format: false,
-          picker_utc: true,
-        }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
-      - { label: "Hide", name: "hide_from_sitemap", widget: "boolean" }
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "Company"
+        name: "company"
+        widget: "string"
+      - label: "Position"
+        name: "position"
+        widget: "string"
+      - label: "Start Date"
+        name: "start_date"
+        widget: "datetime"
+        default: ""
+        date_format: "MM YYYY"
+        time_format: false
+        picker_utc: true
+      - label: "End Date"
+        name: "end_date"
+        widget: "datetime"
+        required: false
+        default: ""
+        date_format: "MM YYYY"
+        time_format: false
+        picker_utc: true
+      - label: "Location"
+        name: "location"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+      - label: "Hide"
+        name: "hide_from_sitemap"
+        widget: "boolean"
