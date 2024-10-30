@@ -6,6 +6,6 @@
     "stylelint": "^14.16.1",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^29.0.0",
-    "workbox-cli": "^7.1.0"
+    "workbox-cli": "^7.3.0"
   }
 }
