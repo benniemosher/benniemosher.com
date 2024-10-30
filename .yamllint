@@ -1,0 +1,12 @@
+---
+
+extends: default
+
+ignore: |
+  node_modules/
+  _site/
+
+rules:
+  comments: false
+  line-length: false
+  truthy: false

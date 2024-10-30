@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables";
+
 article {
   margin-top: 40px;
 
@@ -14,7 +17,7 @@ article {
   }
 
   .read-more {
-    background-color: $secondary-color;
+    background-color: variables.$secondary-color;
     border-radius: 3px;
     color: #fff;
     display: inline-block;
@@ -24,7 +27,7 @@ article {
     transition: background-color 0.15s ease-in-out;
 
     &:hover {
-      background-color: lighten($secondary-color, 10%);
+      background-color: color.adjust(variables.$secondary-color, $lightness: 10%);
     }
   }
 

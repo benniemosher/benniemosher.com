@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "variables";
+
 body {
   font-family: Raleway, sans-serif;
   font-weight: 400;
@@ -33,7 +36,7 @@ a {
   transition: all 0.15s ease-in-out;
 
   &:hover {
-    color: $secondary-color;
+    color: variables.$secondary-color;
   }
 }
 
@@ -67,7 +70,7 @@ h4,
 h5,
 h6 {
   font-family: Merriweather, sans-serif;
-  color: $primary-color;
+  color: variables.$primary-color;
 
   &:first-child {
     margin-top: 0;
@@ -86,7 +89,7 @@ ul {
 h1 {
   font-size: 25px;
   margin-top: 80px;
-  color: lighten($primary-color, 20%);
+  color: color.adjust(variables.$primary-color, $lightness: 20%);
   font-family: Raleway, sans-serif;
   font-weight: 400;
 
