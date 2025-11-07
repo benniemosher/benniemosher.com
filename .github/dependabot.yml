@@ -1,25 +1,13 @@
----
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
     groups:
       stylelint-and-configs:
-        group-name: "stylelint + configs"
         patterns:
-          - "^(@[^/]+\\/)?stylelint$"
-          - "^(@[^/]+\\/)?stylelint-config-sass-guidelines$"
-          - "^(@[^/]+\\/)?stylelint-config-standard$"
-  - package-ecosystem: "bundler" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-  - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: "/.github" # Location of package manifests
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
+          - "^(@[^/]+\/)?stylelint$"
+          - "^(@[^/]+\/)?stylelint-config-sass-guidelines$"
+          - "^(@[^/]+\/)?stylelint-config-standard$"
