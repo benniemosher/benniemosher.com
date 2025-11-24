@@ -3,7 +3,7 @@
     "workbox": "workbox"
   },
   "devDependencies": {
-    "stylelint": "^16.25.0",
+    "stylelint": "^16.26.0",
     "stylelint-config-sass-guidelines": "^12.1.0",
     "stylelint-config-standard": "^39.0.1",
     "workbox-cli": "^7.3.0"
