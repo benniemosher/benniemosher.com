@@ -27,7 +27,7 @@
   "assignees": [
     "@benniemosher"
   ],
-  "reviewers": [],
+  "reviewers": ["benniemosher"],
   "vulnerabilityAlerts": {
     "labels": [
       "security",
