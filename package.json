@@ -3,13 +3,13 @@
     "workbox": "workbox"
   },
   "devDependencies": {
-    "stylelint": "^16.26.1",
-    "stylelint-config-sass-guidelines": "^12.1.0",
-    "stylelint-config-standard": "^39.0.1",
+    "stylelint": "^17.0.0",
+    "stylelint-config-sass-guidelines": "^13.0.0",
+    "stylelint-config-standard": "^40.0.0",
     "workbox-cli": "^7.4.0"
   },
   "overrides": {
-    "got": "11.8.6",
+    "got": "15.0.5",
     "tmp": "0.2.5"
   }
 }
