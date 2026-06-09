@@ -37,6 +37,17 @@
       "@benniemosher"
     ]
   },
+  "customManagers": [
+    {
+      "description": "Keep NODE_VERSION in netlify.toml in sync with .node-version",
+      "customType": "regex",
+      "fileMatch": ["netlify\\.toml"],
+      "matchStrings": ["NODE_VERSION = \"(?<currentValue>[^\"]+)\""],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "node-version",
+      "versioningTemplate": "node"
+    }
+  ],
   "packageRules": [
     {
       "description": "GitHub Actions - automerge patch/minor",
