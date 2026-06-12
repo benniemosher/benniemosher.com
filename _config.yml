@@ -42,4 +42,14 @@ jekyll-minifier:
 feed:
   tags: false
 
+spoiler_warning:
+  enabled: true
+  categories:
+    - book
+    - reviews
+  title: "Spoiler Warning"
+  message: "This post contains spoilers for the book being reviewed. If you haven't read it yet and want to go in fresh, you may want to skip this one."
+  confirm_text: "Continue Reading"
+  cancel_text: "← Go Back"
+
 include: [_redirects]

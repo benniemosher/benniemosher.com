@@ -1,0 +1,99 @@
+@use "sass:color";
+@use "variables";
+
+.sw-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(variables.$primary-color, 0.94);
+  padding: 1rem;
+
+  &__card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+    color: variables.$secondary-color;
+  }
+
+  &__title {
+    font-family: Merriweather, serif;
+    color: variables.$primary-color;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    max-width: none;
+    letter-spacing: -0.01em;
+  }
+
+  &__message {
+    color: #4c566a;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+    max-width: none;
+    font-size: 0.95rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    border: 2px solid variables.$secondary-color;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    &--accept {
+      background: variables.$secondary-color;
+      color: variables.$primary-color;
+
+      &:hover,
+      &:focus {
+        background: color.adjust(variables.$secondary-color, $lightness: -10%);
+        border-color: color.adjust(variables.$secondary-color, $lightness: -10%);
+        outline: none;
+      }
+    }
+
+    &--cancel {
+      background: transparent;
+      color: variables.$primary-color;
+
+      &:hover,
+      &:focus {
+        background: color.adjust(variables.$primary-color, $lightness: 60%);
+        outline: none;
+      }
+    }
+  }
+}
+
+body.sw-open {
+  overflow: hidden;
+}
