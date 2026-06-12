@@ -1,0 +1,51 @@
+version: "3"
+
+tasks:
+  default:
+    desc: List available tasks
+    cmds:
+      - task --list
+
+  serve:
+    desc: Start Jekyll dev server at http://localhost:4000 (foreground, with logs)
+    cmds:
+      - docker compose up
+
+  dev:
+    desc: Start Jekyll in background, wait until ready, then open browser
+    cmds:
+      - docker compose up -d
+      - cmd: until curl -sf http://localhost:4000 > /dev/null; do sleep 2; done
+        ignore_error: true
+      - open http://localhost:4000
+      - docker compose logs -f
+
+  open:
+    desc: Open the dev site in the browser
+    cmds:
+      - open http://localhost:4000
+
+  stop:
+    desc: Stop the dev server
+    cmds:
+      - docker compose down
+
+  build:
+    desc: Build the site for production (mirrors netlify.toml)
+    cmds:
+      - docker compose run --rm --no-deps jekyll bash -c "bundle install && bundle exec jekyll build"
+
+  lint:css:
+    desc: Lint SCSS files with stylelint
+    cmds:
+      - npx stylelint "**/*.scss"
+
+  lint:
+    desc: Run all linters
+    deps: [lint:css]
+
+  clean:
+    desc: Remove built site, Jekyll cache, and Docker volume cache
+    cmds:
+      - rm -rf _site .jekyll-cache
+      - docker compose down -v

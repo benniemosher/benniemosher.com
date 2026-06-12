@@ -1,0 +1,32 @@
+{%- if page.spoiler_warning -%}
+{%- assign sw = site.spoiler_warning -%}
+{%- assign sw_key = page.url | replace: '/', '_' -%}
+<div
+  id="spoiler-warning-modal"
+  class="sw-modal"
+  data-post-key="{{ sw_key }}"
+  data-home-url="{{ '/' | prepend: site.baseurl }}"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="sw-modal-title"
+>
+  <div class="sw-modal__card">
+    <div class="sw-modal__icon" aria-hidden="true">&#9888;</div>
+    <h2 id="sw-modal-title" class="sw-modal__title">
+      {{ sw.title | default: "Spoiler Warning" }}
+    </h2>
+    <p class="sw-modal__message">
+      {{ sw.message | default: "This post contains spoilers for the book being reviewed." }}
+    </p>
+    <div class="sw-modal__actions">
+      <button id="sw-modal-cancel" class="sw-modal__btn sw-modal__btn--cancel" type="button">
+        {{ sw.cancel_text | default: "&larr; Go Back" }}
+      </button>
+      <button id="sw-modal-accept" class="sw-modal__btn sw-modal__btn--accept" type="button">
+        {{ sw.confirm_text | default: "Continue Reading" }}
+      </button>
+    </div>
+  </div>
+</div>
+<script src="{{ '/assets/js/spoiler-warning.js' | prepend: site.baseurl }}"></script>
+{%- endif -%}
