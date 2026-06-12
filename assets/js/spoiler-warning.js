@@ -1,10 +1,22 @@
 (function () {
+  function safeUrl(url, fallback) {
+    try {
+      var parsed = new URL(url, window.location.origin);
+      if ((parsed.protocol !== 'http:' && parsed.protocol !== 'https:') ||
+          parsed.origin !== window.location.origin) {
+        return fallback;
+      }
+      return parsed.pathname + parsed.search + parsed.hash;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
   var modal = document.getElementById('spoiler-warning-modal');
   if (!modal) return;
 
   var postKey = modal.getAttribute('data-post-key');
-  var rawUrl = modal.getAttribute('data-home-url') || '/';
-  var homeUrl = /^\/[^/\\]/.test(rawUrl) || rawUrl === '/' ? rawUrl : '/';
+  var homeUrl = safeUrl(modal.getAttribute('data-home-url') || '/', '/');
   var storageKey = 'sw_accepted' + postKey;
 
   // Already accepted — remove modal immediately so content is visible
