@@ -3,7 +3,8 @@
   if (!modal) return;
 
   var postKey = modal.getAttribute('data-post-key');
-  var homeUrl = modal.getAttribute('data-home-url') || '/';
+  var rawUrl = modal.getAttribute('data-home-url') || '/';
+  var homeUrl = /^\/[^/\\]/.test(rawUrl) || rawUrl === '/' ? rawUrl : '/';
   var storageKey = 'sw_accepted' + postKey;
 
   // Already accepted — remove modal immediately so content is visible
