@@ -6,9 +6,7 @@
   ],
   "timezone": "America/Denver",
   "schedule": [
-    "after 10pm every weekday",
-    "before 5am every weekday",
-    "every weekend"
+    "on friday"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dependency Dashboard",
