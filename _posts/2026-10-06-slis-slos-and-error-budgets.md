@@ -73,13 +73,17 @@ Start with one or two per service. The Strava sync covers availability and laten
 
 ## Low-traffic services
 
-My Strava sync sees a few events a day. With so few, one failure is a large error rate. The Workbook lists several ways to handle this:
+My Strava sync sees about three events a week, roughly 12 in a 30-day window. At that volume the percentages stop meaning much. A 99.9% SLO allows 0.012 failed events in that window, and even 99% allows 0.12. A single failure is an 8% error rate, so one bad webhook uses the whole budget.
+
+The Workbook lists several ways to handle low traffic:
 
 1. Send a known test event on a schedule so there is steady traffic.
-2. Alert on longer windows, such as 3 days.
+2. Alert on longer windows, such as 3 days or more.
 3. Wait for a minimum number of events before alerting.
 4. Open a ticket instead of paging for services that do not need to wake anyone.
-5. Loosen the SLO. For a homelab service, 99% is more realistic than 99.9%.
+5. Loosen the SLO. This helps a busy service, but at 12 events a month one failure is still over budget.
+
+For the Strava sync I am going with a scheduled test event, so the SLI has steady traffic, and ticket-only alerts, so one lost webhook never wakes me up.
 
 ## What is next
 
