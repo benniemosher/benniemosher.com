@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       curve: "basis",
       htmlLabels: true,
       padding: 14,
+      wrappingWidth: 340,
       nodeSpacing: 40,
       rankSpacing: 48
     }
