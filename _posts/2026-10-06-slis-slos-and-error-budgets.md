@@ -81,7 +81,7 @@ The same SLO behaves very differently depending on how many events the service s
 | ArgoCD syncs | about 195 | 0.2 | 0.5% error rate, still over a 99.9% budget |
 | Pi-hole DNS queries | about 900,000 | about 900 | nothing you could measure |
 
-Pi-hole is where an SLO works the way the books describe. It answers roughly 30,000 queries a day, and in the last 7 days it returned zero SERVFAIL or REFUSED replies. I can set 99.9% and the budget means something. ArgoCD sits in the middle: 91 syncs succeeded in 14 days with no errors, but with so few events a 99% SLO, which allows about 2 failures a month, is the realistic one.
+Pi-hole is where an SLO works the way the books describe. It answers roughly 30,000 queries a day, and in the last 7 days it returned zero SERVFAIL or REFUSED replies. I can set 99.9% and the budget means something. It is the first SLO I am writing for the homelab: good events are queries that are not SERVFAIL or REFUSED, using the metrics my [pihole6-exporter](https://github.com/Mosher-Labs/pihole6-exporter) already exposes. The work is tracked in [homelab-gitops#192](https://github.com/Mosher-Labs/homelab-gitops/issues/192). ArgoCD sits in the middle: 91 syncs succeeded in 14 days with no errors, but with so few events a 99% SLO, which allows about 2 failures a month, is the realistic one.
 
 The Strava sync is the low-traffic case. It sees about three events a week, so at that volume the percentages stop meaning much. A single failed webhook is an 8% error rate.
 
