@@ -2,6 +2,7 @@
 layout: post
 title: "SLIs, SLOs and Error Budgets"
 date: 2026-10-06
+mermaid: true
 categories:
   - Learning
 description: "What an SLI, an SLO and an error budget are, how to choose them, and a worked example using the Strava sync for my self-hosted LiftTrace."
@@ -16,6 +17,19 @@ I have been working through the Google SRE Workbook, and the first thing it asks
 
 The budget turns "is this reliable enough?" into a number you can check. If budget remains, you keep shipping changes. If it is gone, you work on reliability until it recovers. The window rolls forward, so old failures age out and the budget refills.
 
+```mermaid
+flowchart TD
+    A("Valid events") --> B("SLI<br/>good events / valid events")
+    B --> C("SLO<br/>target over a window, e.g. 99.9% over 30 days")
+    C --> D("Error budget<br/>100% minus the SLO")
+    D --> E{"Budget left?"}
+    E -- yes --> F("Ship changes"):::good
+    E -- no --> G("Work on reliability"):::bad
+    G -. "the window rolls forward, old failures age out" .-> D
+    classDef good fill:#a3be8c,stroke:#5e7f4a,color:#2e3440
+    classDef bad fill:#d08770,stroke:#a85a44,color:#2e3440
+```
+
 If you have been down 5 minutes in a 30-day window, you have used about 12% of a 99.9% budget. About 38 minutes remain.
 
 ## A worked example: the Strava sync
@@ -29,6 +43,18 @@ My first idea for an SLI was "the number of cardio workouts imported from Strava
 **Valid events** are everything the service is responsible for. I define them at the input, the webhook arriving, and not at the output. If I defined valid as "shows up in the database," every failed import would drop out of the count and the SLI would read 100% while imports were failing.
 
 **Good events** are the valid ones that met the target: imported within 1 minute.
+
+```mermaid
+flowchart TD
+    W("Strava activity webhook received") --> V{"Valid?<br/>handled type, well-formed"}
+    V -- no --> X("Not counted"):::skip
+    V -- yes --> I{"Imported into LiftTrace<br/>within 1 minute?"}
+    I -- yes --> G("Good event"):::good
+    I -- no --> B("Bad event"):::bad
+    classDef good fill:#a3be8c,stroke:#5e7f4a,color:#2e3440
+    classDef bad fill:#d08770,stroke:#a85a44,color:#2e3440
+    classDef skip fill:#d8dee9,stroke:#4c566a,color:#2e3440
+```
 
 Things I leave out of valid events: health checks, activity types I skip on purpose, and requests that were malformed to begin with. A scheduled test event that travels the real path counts, because it measures the real service.
 
