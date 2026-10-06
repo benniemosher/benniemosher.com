@@ -71,9 +71,19 @@ There are four common kinds:
 
 Start with one or two per service. The Strava sync covers availability and latency in one number, because "imported within 1 minute" fails on both a lost event and a slow one.
 
-## Low-traffic services
+## Traffic changes what an SLO can tell you
 
-My Strava sync sees about three events a week, roughly 12 in a 30-day window. At that volume the percentages stop meaning much. A 99.9% SLO allows 0.012 failed events in that window, and even 99% allows 0.12. A single failure is an 8% error rate, so one bad webhook uses the whole budget.
+The same SLO behaves very differently depending on how many events the service sees. These are real numbers from my homelab Prometheus, taken over the last 7 to 14 days and scaled to a 30-day window.
+
+| Service | Events per 30 days | Failures a 99.9% SLO allows | What one failure does |
+|---|---|---|---|
+| Strava sync | about 12 | 0.012 | 8% error rate, the whole budget gone |
+| ArgoCD syncs | about 195 | 0.2 | 0.5% error rate, still over a 99.9% budget |
+| Pi-hole DNS queries | about 900,000 | about 900 | nothing you could measure |
+
+Pi-hole is where an SLO works the way the books describe. It answers roughly 30,000 queries a day, and in the last 7 days it returned zero SERVFAIL or REFUSED replies. I can set 99.9% and the budget means something. ArgoCD sits in the middle: 91 syncs succeeded in 14 days with no errors, but with so few events a 99% SLO, which allows about 2 failures a month, is the realistic one.
+
+The Strava sync is the low-traffic case. It sees about three events a week, so at that volume the percentages stop meaning much. A single failed webhook is an 8% error rate.
 
 The Workbook lists several ways to handle low traffic:
 
@@ -81,7 +91,7 @@ The Workbook lists several ways to handle low traffic:
 2. Alert on longer windows, such as 3 days or more.
 3. Wait for a minimum number of events before alerting.
 4. Open a ticket instead of paging for services that do not need to wake anyone.
-5. Loosen the SLO. This helps a busy service, but at 12 events a month one failure is still over budget.
+5. Loosen the SLO. That is what I would do for ArgoCD, but at 12 events a month one failure is still over budget.
 
 For the Strava sync I am going with a scheduled test event, so the SLI has steady traffic, and ticket-only alerts, so one lost webhook never wakes me up.
 
