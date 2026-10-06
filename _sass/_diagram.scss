@@ -1,0 +1,27 @@
+// Mermaid diagrams, styled after the Nord palette.
+.mermaid {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1rem;
+  overflow-x: auto;
+  text-align: center;
+  background: #eceff4;
+  border: 1px solid #d8dee9;
+  border-radius: 10px;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .node rect {
+    rx: 8px;
+    ry: 8px;
+    stroke-width: 1.5px;
+  }
+
+  // stylelint-disable-next-line selector-class-pattern
+  .edgePath path,
+  .flowchart-link {
+    stroke-width: 1.75px;
+  }
+}

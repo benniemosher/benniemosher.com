@@ -27,3 +27,8 @@
 
 <!-- <script type="text/javascript" src="{{ "/assets/js/main.js" | prepend: site.baseurl | prepend: site.url }}"></script> -->
 <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700&display=swap" rel="stylesheet">
+
+{%- if page.mermaid %}
+<script defer src="/assets/js/mermaid.min.js"></script>
+<script defer src="/assets/js/diagrams.js"></script>
+{%- endif %}
