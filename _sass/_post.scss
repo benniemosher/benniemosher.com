@@ -96,4 +96,20 @@ article {
     font-weight: 700;
     white-space: nowrap;
   }
+
+  blockquote {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    background-color: #eceff4;
+    border-left: 4px solid variables.$secondary-color;
+    border-radius: 0 8px 8px 0;
+    color: variables.$primary-color;
+    font-size: 1.05em;
+
+    p {
+      margin: 0;
+      max-width: none;
+    }
+  }
 }
