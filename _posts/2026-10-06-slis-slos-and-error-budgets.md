@@ -102,7 +102,7 @@ Pi-hole was the first SLO I wrote for real, since it has the traffic to make the
 
 One thing surprised me. I left the fastest alert out on purpose. With a probe once a minute, a single failed probe in an hour is already a burn rate of 16.7, so one blip would page me. I'll explain what that number means in the next post.
 
-I did test it. I made temporary copies of the two alerts, fed them a fake 95% success rate, and both fired in Slack and Webex. Then I switched the fake rate to 100% and they cleared.
+I did test it. I made temporary copies of the two alerts, fed them a fake 95% success rate, and both fired in Slack and Webex. Then I switched the fake rate to 100% and the resolved messages showed up in both.
 
 ## What's next
 
