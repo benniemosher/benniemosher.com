@@ -53,4 +53,63 @@ article {
     width: 100%;
     max-width: 1200px;
   }
+
+  table {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #d8dee9;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.95em;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.65rem 1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: variables.$primary-color;
+    color: #eceff4;
+    font-weight: 700;
+  }
+
+  td {
+    border-top: 1px solid #d8dee9;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #eceff4;
+  }
+
+  td:first-child {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  blockquote {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 1.25rem;
+    background-color: #eceff4;
+    border-left: 4px solid variables.$secondary-color;
+    border-radius: 0 8px 8px 0;
+    color: variables.$primary-color;
+    font-size: 1.05em;
+
+    p {
+      margin: 0;
+      max-width: none;
+    }
+  }
 }
