@@ -7,7 +7,7 @@ categories:
   - Learning
 description: "I kept mixing up SLI, SLO and error budget, so I wrote them down with real numbers from my homelab."
 ---
-I've been working through the Google SRE Workbook, and the first thing it makes you do is get three terms straight: SLI, SLO and error budget. I kept mixing them up. I'm keeping a notebook of diagrams on paper for myself, but I figured the short version belongs here too, with numbers from stuff I actually run at home.
+I've been working through Google's SRE book and its companion, the SRE Workbook, and the first thing they make you do is get three terms straight: SLI, SLO and error budget. I kept mixing them up. I'm keeping a notebook of diagrams on paper for myself, but I figured the short version belongs here too, with numbers from stuff I actually run at home.
 
 ## The three terms
 
@@ -108,4 +108,4 @@ I did test it. I made temporary copies of the two alerts, fed them a fake 95% su
 
 An SLO only helps if something is watching it. The next post covers burn-rate alerts, the part that turns an error budget into an alert that pages me for a fast problem and just opens a ticket for a slow one.
 
-The source for all of this is the [SRE Workbook chapter on implementing SLOs](https://sre.google/workbook/implementing-slos/).
+The sources for all of this are the SRE book's chapter on [service level objectives](https://sre.google/sre-book/service-level-objectives/) and the Workbook's chapter on [implementing SLOs](https://sre.google/workbook/implementing-slos/).
