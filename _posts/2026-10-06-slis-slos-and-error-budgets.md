@@ -5,17 +5,19 @@ date: 2026-10-06
 mermaid: true
 categories:
   - Learning
-description: "What an SLI, an SLO and an error budget are, how to choose them, and a worked example using the Strava sync for my self-hosted LiftTrace."
+description: "I kept mixing up SLI, SLO and error budget, so I wrote them down with real numbers from my homelab."
 ---
-I have been working through the Google SRE Workbook, and the first thing it asks you to get straight is three terms: SLI, SLO and error budget. I kept mixing them up, so I wrote them down in order. This is that list, with an example from something I run at home.
+I've been working through the Google SRE Workbook, and the first thing it makes you do is get three terms straight: SLI, SLO and error budget. I kept mixing them up. I'm keeping a notebook of diagrams on paper for myself, but I figured the short version belongs here too, with numbers from stuff I actually run at home.
 
 ## The three terms
 
-- **SLI (service level indicator):** a number that tells you how the service is doing. It is a ratio: good events divided by valid events.
-- **SLO (service level objective):** the target for that number over a window of time. For example, 99.9% over 30 days.
-- **Error budget:** the amount the SLO allows to fail. It is 100% minus the SLO. At 99.9% over 30 days, you can fail 0.1% of valid events, which is about 43 minutes of full outage.
+An **SLI** (service level indicator) is a number that tells you how the service is doing. It's a ratio: good events divided by valid events. That's it.
 
-The budget turns "is this reliable enough?" into a number you can check. If budget remains, you keep shipping changes. If it is gone, you work on reliability until it recovers. The window rolls forward, so old failures age out and the budget refills.
+An **SLO** (service level objective) is the target for that number over a window of time. Say, 99.9% over 30 days.
+
+The **error budget** is whatever the SLO lets you get wrong. It's 100% minus the SLO. At 99.9% over 30 days you can fail 0.1% of valid events, which works out to about 43 minutes of full outage.
+
+The budget is the part that clicked for me. It turns "is this reliable enough?" into something you can check. If there's budget left, you keep shipping. If it's gone, you stop and work on reliability until it comes back. The window rolls forward, so old failures age out and the budget refills.
 
 ```mermaid
 flowchart TD
@@ -30,19 +32,17 @@ flowchart TD
     classDef bad fill:#d08770,stroke:#a85a44,color:#2e3440
 ```
 
-If you have been down 5 minutes in a 30-day window, you have used about 12% of a 99.9% budget. About 38 minutes remain.
+My first question was the obvious one. If I've been down 5 minutes this month, do I still have budget? Yes. A 99.9% SLO allows about 43 minutes, so 5 minutes is roughly 12% spent and I have about 38 minutes left.
 
-## A worked example: the Strava sync
+## My first SLI was wrong
 
-I run a small Cloudflare Worker that connects my self-hosted LiftTrace to Strava. I am adding the other direction: when I log an activity in Strava, it should show up in LiftTrace as a cardio entry.
+I run a small Cloudflare Worker that connects my self-hosted LiftTrace to Strava. Right now it sends my workouts to Strava. I want to add the other direction, so a run I log in Strava shows up in LiftTrace as cardio. That part isn't built yet.
 
-My first idea for an SLI was "the number of cardio workouts imported from Strava." A count is not an SLI, because it does not say how many should have been imported. An SLI is a ratio:
+When I tried to come up with an SLI for it, I wrote down "number of cardio workouts imported from Strava." That's a count, and a count isn't an SLI. It doesn't tell you how many *should* have been imported. An SLI is a ratio, so this one becomes:
 
 > activities imported into LiftTrace within 1 minute, divided by all valid Strava activity webhooks the Worker receives
 
-**Valid events** are everything the service is responsible for. I define them at the input, the webhook arriving, and not at the output. If I defined valid as "shows up in the database," every failed import would drop out of the count and the SLI would read 100% while imports were failing.
-
-**Good events** are the valid ones that met the target: imported within 1 minute.
+I also got "valid" backwards the first time. I said a valid event is one that shows up in the database. If that's your definition, every failed import never makes it to the database, so it never counts, and your SLI sits at 100% while imports are failing. Valid events get defined at the input, when the webhook arrives. "Shows up in the database" is what makes an event *good*.
 
 ```mermaid
 flowchart TD
@@ -56,11 +56,11 @@ flowchart TD
     classDef skip fill:#d8dee9,stroke:#4c566a,color:#2e3440
 ```
 
-Things I leave out of valid events: health checks, activity types I skip on purpose, and requests that were malformed to begin with. A scheduled test event that travels the real path counts, because it measures the real service.
+What I leave out of valid events: health checks, activity types I skip on purpose, and requests that were malformed to begin with. A scheduled test event that travels the real path does count, because it's measuring the real service.
 
 ## Pick the SLI from what you see
 
-There are four common kinds:
+There are four common kinds.
 
 | Kind | Question it answers |
 |---|---|
@@ -69,11 +69,11 @@ There are four common kinds:
 | Freshness | Is the data recent enough? |
 | Correctness | Is the answer right? |
 
-Start with one or two per service. The Strava sync covers availability and latency in one number, because "imported within 1 minute" fails on both a lost event and a slow one.
+Start with one or two per service. The Strava sync covers availability and latency in one number, because "imported within 1 minute" fails on a lost event and on a slow one.
 
 ## Traffic changes what an SLO can tell you
 
-The same SLO behaves very differently depending on how many events the service sees. These are real numbers from my homelab Prometheus, taken over the last 7 to 14 days and scaled to a 30-day window.
+I assumed the Strava sync saw an event or so a day. It's closer to three a week. That matters a lot, so I pulled real numbers from my Prometheus for a couple of other things I run. These are from the last 7 to 14 days, scaled to 30.
 
 | Service | Events per 30 days | Failures a 99.9% SLO allows | What one failure does |
 |---|---|---|---|
@@ -81,22 +81,31 @@ The same SLO behaves very differently depending on how many events the service s
 | ArgoCD syncs | about 195 | 0.2 | 0.5% error rate, still over a 99.9% budget |
 | Pi-hole DNS queries | about 900,000 | about 900 | nothing you could measure |
 
-Pi-hole is where an SLO works the way the books describe. It answers roughly 30,000 queries a day, and in the last 7 days it returned zero SERVFAIL or REFUSED replies. I can set 99.9% and the budget means something. It is the first SLO I am writing for the homelab: good events are queries that are not SERVFAIL or REFUSED, using the metrics my [pihole6-exporter](https://github.com/Mosher-Labs/pihole6-exporter) already exposes. ArgoCD sits in the middle: 91 syncs succeeded in 14 days with no errors, but with so few events a 99% SLO, which allows about 2 failures a month, is the realistic one.
+Pi-hole is where an SLO behaves like the books say. It answers roughly 30,000 queries a day, and in the last week it returned zero SERVFAIL or REFUSED replies. ArgoCD is in the middle. With about 195 syncs a month, a 99% SLO (about 2 failures) is the realistic one. The Strava sync is the low-traffic case: at 12 events a month, a single failed webhook is an 8% error rate.
 
-The Strava sync is the low-traffic case. It sees about three events a week, so at that volume the percentages stop meaning much. A single failed webhook is an 8% error rate.
+The Workbook has a few ways to deal with a service that quiet:
 
-The Workbook lists several ways to handle low traffic:
-
-1. Send a known test event on a schedule so there is steady traffic.
-2. Alert on longer windows, such as 3 days or more.
+1. Send a known test event on a schedule so there's steady traffic.
+2. Alert on longer windows, a day or more.
 3. Wait for a minimum number of events before alerting.
-4. Open a ticket instead of paging for services that do not need to wake anyone.
-5. Loosen the SLO. That is what I would do for ArgoCD, but at 12 events a month one failure is still over budget.
+4. Open a ticket instead of paging, for services that shouldn't wake anyone.
+5. Loosen the SLO. That's what I'd do for ArgoCD, but at 12 events a month one failure is still over budget.
 
-For the Strava sync I am going with a scheduled test event, so the SLI has steady traffic, and ticket-only alerts, so one lost webhook never wakes me up.
+For the Strava sync I'm going with the scheduled test event and ticket-only alerts, so one lost webhook never wakes me up.
 
-## What is next
+## The Pi-hole one, in code
 
-An SLO is only useful if something watches it. The next post covers burn-rate alerts: how to turn an error budget into alerts that page you for fast problems and open tickets for slow ones. I am building that into my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability) module.
+Pi-hole was the first SLO I wrote for real, since it has the traffic to make the numbers mean something. The SLI is a DNS probe that runs every minute, and the SLO is 99.9% over 30 days. The alerts and the dashboard come out of a small module I added to my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability/tree/v0.17.0/modules/slo) repo.
+
+- [The SLO definition](https://github.com/Mosher-Labs/homelab-gitops/blob/0801da680aa7c29c7db2ac24f2885536295227e8/infrastructure/observability-alerts/locals.tf#L84) is about ten lines of Terraform.
+- [The SLO document](https://github.com/Mosher-Labs/homelab-gitops/blob/0801da680aa7c29c7db2ac24f2885536295227e8/docs/slos/pihole-dns.md) says what's measured, why 99.9%, and what I haven't checked yet.
+
+One thing surprised me. I left the fastest alert out on purpose. With a probe once a minute, a single failed probe in an hour is already a burn rate of 16.7, so one blip would page me. I'll explain what that number means in the next post.
+
+I did test it. I made temporary copies of the two alerts, fed them a fake 95% success rate, and both fired. Then I switched the fake rate to 100% and they cleared.
+
+## What's next
+
+An SLO only helps if something is watching it. The next post covers burn-rate alerts, the part that turns an error budget into an alert that pages me for a fast problem and just opens a ticket for a slow one.
 
 The source for all of this is the [SRE Workbook chapter on implementing SLOs](https://sre.google/workbook/implementing-slos/).
