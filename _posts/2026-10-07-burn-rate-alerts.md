@@ -16,12 +16,12 @@ Burn rate is how fast you're using up the error budget. If you're failing at exa
 Here are the three formulas:
 
 ```text
-error rate seen = failed requests / total requests    (counted over a window)
+error rate seen = failed requests / total requests
 burn rate       = error rate seen / error rate allowed
 days to empty   = 30 / burn rate
 ```
 
-The error rate allowed comes from your SLO. At 99.9% it's 0.1%.
+The requests are counted over a window, which I'll get to in a minute. The error rate allowed comes from your SLO. At 99.9% it's 0.1%.
 
 | Burn rate | Days until the budget is gone |
 |---|---|
