@@ -3,4 +3,4 @@
 
 [build.environment]
   RUBY_VERSION = "4.0.5"
-  NODE_VERSION = "25.9.0"
+  NODE_VERSION = "24.21.0"
