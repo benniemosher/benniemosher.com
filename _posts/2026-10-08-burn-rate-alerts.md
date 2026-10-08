@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Burn-Rate Alerts"
-date: 2026-10-07
+date: 2026-10-08 08:00:00 -0600
 mermaid: true
 categories:
   - Learning
