@@ -1,6 +1,8 @@
 // Mermaid diagrams, styled after the Nord palette.
 .mermaid {
-  margin: 1.5rem 0;
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   padding: 1.25rem 1rem;
   overflow-x: auto;
   text-align: center;

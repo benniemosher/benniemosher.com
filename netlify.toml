@@ -4,3 +4,8 @@
 [build.environment]
   RUBY_VERSION = "4.0.5"
   NODE_VERSION = "24.21.0"
+
+# Previews also build posts dated in the future, so a scheduled post can be read
+# before it goes live. Production builds leave them out.
+[context.deploy-preview]
+  command = "npm run vendor:mermaid && bundle install && bundle exec jekyll build --future && npm run workbox generateSW workbox-config.js"
