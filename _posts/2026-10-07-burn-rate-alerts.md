@@ -67,4 +67,4 @@ I tested the alerts the same way as before. I made temporary copies of the two P
 
 Burn rate is the error rate you see divided by the one you're allowed. Pick a window, count over it, and compare it to that window's threshold. The two windows keep the alert honest, and a quiet service needs fewer alerts, not more.
 
-The sources are the Workbook's chapter on [alerting on SLOs](https://sre.google/workbook/alerting-on-slos/) and Datadog's page on [burn rate alerts](https://docs.datadoghq.com/service_level_objectives/burn_rate/). The first post in this pair covers the [SLI, SLO and error budget side](/learning/2026/10/06/slis-slos-and-error-budgets.html).
+The sources are the Workbook's chapter on [alerting on SLOs](https://sre.google/workbook/alerting-on-slos/) and Datadog's page on [burn rate alerts](https://docs.datadoghq.com/service_level_objectives/burn_rate/). The first post in this pair covers the [SLI, SLO, and error budget side](/learning/2026/10/06/slis-slos-and-error-budgets.html).
