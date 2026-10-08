@@ -75,9 +75,8 @@ flowchart TD
     A("Pick a window") --> B("failures / total calls in that window")
     B --> C("÷ allowed error rate = burn rate")
     C --> D{"Over this window's threshold,<br/>in the long and the short window?"}
-    D -- "1h: 14.4" --> E("Page"):::bad
-    D -- "6h: 6" --> E
-    D -- "1d: 3" --> F("Ticket"):::warn
+    D -- "14.4x over 1h, or 6x over 6h" --> E("Page"):::bad
+    D -- "3x over 1d" --> F("Ticket"):::warn
     classDef bad fill:#d08770,stroke:#a85a44,color:#2e3440
     classDef warn fill:#ebcb8b,stroke:#b8974c,color:#2e3440
 ```
