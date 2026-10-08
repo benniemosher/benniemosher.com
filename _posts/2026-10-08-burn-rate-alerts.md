@@ -11,7 +11,7 @@ Last time I wrote down what an SLI, an SLO, and an error budget are. An SLO does
 
 ## Burn rate
 
-Burn rate is how fast you're using up the error budget. If you're failing at exactly the rate your SLO allows, the burn rate is 1 and the budget lasts the whole period, which is 30 days for my SLOs. If you're failing twice as fast, the burn rate is 2 and the budget is gone in 15 days.
+Burn rate is how fast you're using up the error budget. If you're failing at exactly the rate your SLO allows, the burn rate is 1, and the budget lasts the whole period, which is 30 days for my SLOs. If you're failing twice as fast, the burn rate is 2, and the budget is gone in 15 days.
 
 Here are the three formulas:
 
@@ -49,7 +49,7 @@ Here's a real example. Pi-hole answers about 30,000 queries a day, which is roug
 You can also work out how much budget one hour at a given burn rate costs:
 
 ```text
-budget used = burn rate x hours / hours in the SLO period
+budget used = (burn rate x hours) / hours in the SLO period
 ```
 
 My period is 30 days, which is 720 hours (30 x 24). So an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
@@ -85,7 +85,7 @@ One thing I didn't expect: the Workbook's third alert is 1x over 3 days. Datadog
 
 ## A bug I found in my own alert
 
-On Grafana I can't ask for "both windows over the threshold" directly, so my alert compares the smaller of the two burn rates against the threshold. That works, except for one case I only found while reviewing it. If one window has no data, the `min()` quietly ignores it, and the alert fires on the other window alone. That's exactly what the two windows were supposed to prevent. I tested it against Prometheus to be sure, then added a guard that keeps the alert quiet unless both windows have a value.
+On Grafana, I can't ask for "both windows over the threshold" directly, so my alert compares the smaller of the two burn rates against the threshold. That works, except for one case I only found while reviewing it. If one window has no data, the `min()` quietly ignores it, and the alert fires on the other window alone. That's exactly what the two windows were supposed to prevent. I tested it against Prometheus to be sure, then added a guard that keeps the alert quiet unless both windows have a value.
 
 ## Pi-hole, and why I left the fast alert off
 
