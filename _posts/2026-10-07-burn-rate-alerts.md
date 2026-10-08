@@ -7,7 +7,7 @@ categories:
   - Learning
 description: "How an error budget turns into alerts that page me for a fast problem and open a ticket for a slow one, with the arithmetic worked out."
 ---
-Last time I wrote down what an SLI, an SLO and an error budget are. An SLO doesn't do anything on its own, though. Something has to watch the budget and tell you when you're burning through it too fast. That's a burn-rate alert, and the part that took me the longest to get was where the time window comes in.
+Last time I wrote down what an SLI, an SLO, and an error budget are. An SLO doesn't do anything on its own, though. Something has to watch the budget and tell you when you're burning through it too fast. That's a burn-rate alert, and the part that took me the longest to get was where the time window comes in.
 
 ## Burn rate
 
@@ -61,7 +61,7 @@ So Pi-hole only has the medium and slow alerts. Medium needs a burn rate of 6 ov
 
 You can see how it's set up in [the Pi-hole SLO definition](https://github.com/Mosher-Labs/homelab-gitops/blob/0801da680aa7c29c7db2ac24f2885536295227e8/infrastructure/observability-alerts/locals.tf#L84), where `tiers = ["medium", "slow"]` is the one line that leaves the fast alert off. The three tiers and the thresholds are defined [in the module](https://github.com/Mosher-Labs/terraform-kubernetes-observability/blob/v0.17.0/modules/slo/locals.tf#L8), and the burn rate for each window is worked out from the budget share.
 
-I tested the alerts the same way as before: temporary copies of the two Pi-hole alerts, a fake 95% success rate, and I watched both fire and then resolve in Slack and Webex.
+I tested the alerts the same way as before. I made temporary copies of the two Pi-hole alerts, fed them a fake 95% success rate, and watched both fire and then resolve in Slack and Webex.
 
 ## The short version
 
