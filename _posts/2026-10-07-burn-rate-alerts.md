@@ -66,7 +66,7 @@ The Workbook doesn't use one alert. It uses three, each tied to how much of the 
 
 Fast and severe problems page me. A slow leak only opens a ticket, since it can wait until morning.
 
-Each alert looks at two windows, and both have to be over the threshold. The long window tells you the problem is real and not a blip. The short window is there so the alert clears soon after the problem stops, instead of staying red for an hour after you've fixed it.
+Each alert looks at two windows, and both have to be over the threshold for it to fire. The long window tells you the problem is real and not a blip. The short window tells you it's still happening. Without the short one, the alert would keep firing after you fixed the problem, because the long window still has the failures in it until they age out. With it, the alert stops as soon as the last few minutes are clean.
 
 The numbers aren't magic. Each one comes from the budget formula above: `budget used = burn rate x hours / 720`. The fast row is 14.4 x 1 / 720 = 2%, and the slow row is 3 x 24 / 720 = 10%.
 
