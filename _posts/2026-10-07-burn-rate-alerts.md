@@ -11,13 +11,48 @@ Last time I wrote down what an SLI, an SLO, and an error budget are. An SLO does
 
 ## Burn rate
 
-Burn rate is how fast you're spending the budget compared to how fast the SLO allows. You get it by dividing the error rate you're seeing by the error rate you're allowed.
+Burn rate is how fast you're using up the error budget. If you're failing at exactly the rate your SLO allows, the burn rate is 1 and the budget lasts the full 30 days. If you're failing twice as fast, the burn rate is 2 and the budget is gone in 15 days.
 
-At 99.9% the allowed error rate is 0.1%. If 1.44% of requests are failing, the burn rate is 14.4. If the failures stop at exactly 0.1%, the burn rate is 1, and the budget lasts the whole 30 days. A burn rate of 10 empties it in 3 days.
+Here are the three formulas:
 
-The time window is just the stretch of time you count over. "The last hour" means: take the failures and the total calls from the last hour, divide, then divide by 0.1%. Pick a different window and you count a different stretch, but the formula stays the same.
+```text
+error rate seen = failed requests / total requests    (counted over a window)
+burn rate       = error rate seen / error rate allowed
+days to empty   = 30 / burn rate
+```
 
-Here's a real one. Pi-hole answers about 30,000 queries a day, so roughly 1,250 an hour. Say 18 of them fail in an hour. That's 1.44%, a burn rate of 14.4. Held for that hour, it uses 2% of the month's budget: 14.4 hours' worth, out of the 720 hours in 30 days. Two failed queries in the same hour is 0.16%, a burn rate of 1.6, and nothing needs to happen.
+The error rate allowed comes from your SLO. At 99.9% it's 0.1%.
+
+| Burn rate | Days until the budget is gone |
+|---|---|
+| 1 | 30 |
+| 2 | 15 |
+| 10 | 3 |
+| 14.4 | about 2 |
+
+## The window
+
+You never measure "the error rate" in the abstract. You measure it over a window, like the last hour. The window only tells you which stretch of time to count failures and total requests in. A different window counts a different stretch, and the formulas stay the same.
+
+Here's a real example. Pi-hole answers about 30,000 queries a day, which is roughly 1,250 an hour. Here are two different hours at a 99.9% SLO:
+
+| | An hour with 18 failures | An hour with 2 failures |
+|---|---|---|
+| Total queries | 1,250 | 1,250 |
+| Error rate seen | 1.44% | 0.16% |
+| Error rate allowed | 0.1% | 0.1% |
+| Burn rate | 14.4 | 1.6 |
+| What should happen | The fast alert pages me | Nothing |
+
+18 failures in an hour is a burn rate of 14.4, so the budget would be gone in about 2 days. That's the number the fast alert watches for, and it's why that hour is worth a page. 2 failures is a burn rate of 1.6, which is just noise.
+
+You can also work out how much budget one hour at a given burn rate costs:
+
+```text
+budget used = burn rate x hours / 720
+```
+
+There are 720 hours in 30 days, so an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
 
 ## Three alerts, two windows each
 
@@ -33,7 +68,7 @@ Fast and severe problems page me. A slow leak only opens a ticket, since it can 
 
 Each alert looks at two windows, and both have to be over the threshold. The long window tells you the problem is real and not a blip. The short window is there so the alert clears soon after the problem stops, instead of staying red for an hour after you've fixed it.
 
-The numbers aren't magic. Each one comes from how much budget you want to spend: burn rate times the window length, divided by the 720 hours in 30 days. The fast row is 14.4 x 1 / 720 = 2%. The slow row is 3 x 24 / 720 = 10%.
+The numbers aren't magic. Each one comes from the budget formula above: `budget used = burn rate x hours / 720`. The fast row is 14.4 x 1 / 720 = 2%, and the slow row is 3 x 24 / 720 = 10%.
 
 ```mermaid
 flowchart TD
