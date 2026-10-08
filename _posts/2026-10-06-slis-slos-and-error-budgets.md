@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "SLIs, SLOs and Error Budgets"
+title: "SLIs, SLOs, and Error Budgets"
 date: 2026-10-06
 mermaid: true
 categories:
   - Learning
-description: "I kept mixing up SLI, SLO and error budget, so I wrote them down with real numbers from my homelab."
+description: "I kept mixing up SLI, SLO, and error budget, so I wrote them down with real numbers from my homelab."
 ---
-I've been working through Google's SRE book and its companion, the SRE Workbook, and the first thing they make you do is get three terms straight: SLI, SLO and error budget. I kept mixing them up. I'm keeping a notebook of diagrams on paper for myself, but I figured the short version belongs here too, with numbers from stuff I actually run at home.
+I've been working through Google's SRE book and its companion, the SRE Workbook, and the first thing they make you do is get three terms straight: SLI, SLO, and error budget. I kept mixing them up. I'm keeping a notebook of diagrams on paper for myself, but I figured the short version belongs here too, with numbers from stuff I actually run at home.
 
 ## The three terms
 
