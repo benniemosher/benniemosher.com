@@ -11,19 +11,19 @@ Last time I wrote down what an SLI, an SLO, and an error budget are. An SLO does
 
 ## Burn rate
 
-Burn rate is how fast you're using up the error budget. If you're failing at exactly the rate your SLO allows, the burn rate is 1 and the budget lasts the full 30 days. If you're failing twice as fast, the burn rate is 2 and the budget is gone in 15 days.
+Burn rate is how fast you're using up the error budget. If you're failing at exactly the rate your SLO allows, the burn rate is 1 and the budget lasts the whole period, which is 30 days for my SLOs. If you're failing twice as fast, the burn rate is 2 and the budget is gone in 15 days.
 
 Here are the three formulas:
 
 ```text
 error rate seen = failed requests / total requests
 burn rate       = error rate seen / error rate allowed
-days to empty   = 30 / burn rate
+days to empty   = days in the SLO period / burn rate
 ```
 
-The requests are counted over a window, which I'll get to in a minute. The error rate allowed comes from your SLO. At 99.9% it's 0.1%. The 30 is the length of the SLO window in days, which is 30 for my SLOs. A 7-day SLO would use 7.
+The requests are counted over a window, which I'll get to in a minute. The error rate allowed comes from your SLO. At 99.9% it's 0.1%. The SLO period is how long your SLO covers, which is 30 days for mine. A 14-day SLO would use 14 in that last formula.
 
-| Burn rate | Days until the budget is gone |
+| Burn rate | Days until the budget is gone (30-day period) |
 |---|---|
 | 1 | 30 |
 | 2 | 15 |
@@ -49,10 +49,10 @@ Here's a real example. Pi-hole answers about 30,000 queries a day, which is roug
 You can also work out how much budget one hour at a given burn rate costs:
 
 ```text
-budget used = burn rate x hours / 720
+budget used = burn rate x hours / hours in the SLO period
 ```
 
-There are 720 hours in 30 days (30 x 24), so an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
+My period is 30 days, which is 720 hours (30 x 24). So an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
 
 ## Three alerts, two windows each
 
@@ -68,7 +68,7 @@ Fast and severe problems page me. A slow leak only opens a ticket, since it can 
 
 Each alert looks at two windows, and both have to be over the threshold for it to fire. The long window tells you the problem is real and not a blip. The short window tells you it's still happening. Without the short one, the alert would keep firing after you fixed the problem, because the long window still has the failures in it until they age out. With it, the alert stops as soon as the last few minutes are clean.
 
-The numbers aren't magic. Each one comes from the budget formula above: `budget used = burn rate x hours / 720`. The fast row is 14.4 x 1 / 720 = 2%, and the slow row is 3 x 24 / 720 = 10%.
+The numbers aren't magic. Each one comes from the budget formula above, with my 720 hours: the fast row is 14.4 x 1 / 720 = 2%, and the slow row is 3 x 24 / 720 = 10%.
 
 ```mermaid
 flowchart TD
