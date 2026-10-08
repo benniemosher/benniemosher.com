@@ -21,7 +21,7 @@ burn rate       = error rate seen / error rate allowed
 days to empty   = 30 / burn rate
 ```
 
-The requests are counted over a window, which I'll get to in a minute. The error rate allowed comes from your SLO. At 99.9% it's 0.1%.
+The requests are counted over a window, which I'll get to in a minute. The error rate allowed comes from your SLO. At 99.9% it's 0.1%. The 30 is the length of the SLO window in days, which is 30 for my SLOs. A 7-day SLO would use 7.
 
 | Burn rate | Days until the budget is gone |
 |---|---|
@@ -52,7 +52,7 @@ You can also work out how much budget one hour at a given burn rate costs:
 budget used = burn rate x hours / 720
 ```
 
-There are 720 hours in 30 days, so an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
+There are 720 hours in 30 days (30 x 24), so an hour at 14.4 uses 14.4 / 720, which is 2% of the month's budget.
 
 ## Three alerts, two windows each
 
