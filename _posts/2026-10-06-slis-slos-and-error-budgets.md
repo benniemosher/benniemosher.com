@@ -83,15 +83,15 @@ I assumed the Strava sync saw an event or so a day. It's closer to three a week.
 
 Pi-hole is where an SLO behaves like the books say. It answers roughly 30,000 queries a day, and in the last week it returned zero SERVFAIL or REFUSED replies. ArgoCD is in the middle. With about 195 syncs a month, a 99% SLO (about 2 failures) is the realistic one. The Strava sync is the low-traffic case: at 12 events a month, a single failed webhook is an 8% error rate.
 
-The Workbook has a few ways to deal with a service that quiet:
+The Workbook's section on low-traffic services lists three options: generate artificial traffic, combine small services into a larger one for monitoring, or change the product so a failure does less damage. It also warns about the first one. If a problem hurts real users but not the artificial traffic, the successful fake requests hide it, so you never hear about it.
 
-1. Send a known test event on a schedule so there's steady traffic.
+On top of that, there are a few things I'm doing for the Strava sync:
+
+1. Send a known test event on a schedule so there's steady traffic, and keep an eye on the real events too, for the reason above.
 2. Alert on longer windows, a day or more.
-3. Wait for a minimum number of events before alerting.
-4. Open a ticket instead of paging, for services that shouldn't wake anyone.
-5. Loosen the SLO. That's what I'd do for ArgoCD, but at 12 events a month one failure is still over budget.
+3. Open a ticket instead of paging, since one lost webhook shouldn't wake me up.
 
-For the Strava sync I'm going with the scheduled test event and ticket-only alerts, so one lost webhook never wakes me up.
+Loosening the SLO is another option. That's what I'd do for ArgoCD, but at 12 events a month one failure is still over budget.
 
 ## The Pi-hole one, in code
 
