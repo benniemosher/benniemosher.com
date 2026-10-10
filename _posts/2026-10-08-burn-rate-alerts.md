@@ -89,6 +89,8 @@ On Grafana, I can't ask for "both windows over the threshold" directly, so my al
 
 ## Pi-hole, and why I left the fast alert off
 
+> **Update, 2026-10-10:** Pi-hole has all three alerts now. Mike Dabydeen pointed out on LinkedIn that the fix is a faster probe, not a missing alert. The probe runs every 10 seconds now, which is 360 probes an hour, so one failed probe is a burn rate of about 2.8. It takes 6 failed probes in an hour, about a minute of DNS down, to page me. Medium needs 13 in 6 hours and slow needs 26 in a day. [Here's the change](https://github.com/Mosher-Labs/homelab-gitops/pull/201). He also pointed out that the Workbook warns synthetic traffic can hide failures real users see, so I added [a second SLI from Pi-hole's real replies](https://github.com/Mosher-Labs/homelab-gitops/pull/204), where SERVFAIL and REFUSED count as bad. The rest of this section is how I first set it up.
+
 The Pi-hole SLO is built on a DNS probe that runs once a minute. With one probe a minute, a single failed probe in an hour is 1 out of 60, or 1.7%. That's a burn rate of 16.7, which is over 14.4. One blip would page me.
 
 So Pi-hole only has the medium and slow alerts. Medium needs a burn rate of 6 over 6 hours, which is about 3 failed probes out of 360 (2 gets you 5.6, just under). That tells a real problem from a blip. The cost is that a 2-minute outage doesn't page me in real time.
