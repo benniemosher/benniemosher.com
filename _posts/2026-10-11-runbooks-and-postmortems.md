@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Runbooks and Postmortems"
-date: 2026-10-12 05:00:00 -0600
+date: 2026-10-11 05:00:00 -0600
 mermaid: true
 categories:
   - Learning
