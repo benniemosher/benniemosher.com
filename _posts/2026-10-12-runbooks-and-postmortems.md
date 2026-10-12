@@ -73,6 +73,14 @@ It has to be blameless. The book says a blameless postmortem focuses on the cont
 
 My [postmortem template](https://github.com/Mosher-Labs/terraform-kubernetes-observability/blob/v0.18.1/docs/templates/postmortem.md) has a summary, the impact, a timeline, root causes, how long it took to notice, and what went well, what went badly, and where we got lucky. The impact section uses the error budget from the [first post](/learning/2026/10/06/slis-slos-and-error-budgets.html): "this used 18% of the 30-day budget" says more than "DNS was down for a while."
 
+For root causes, the template uses the five whys. You ask why the failure happened, then ask why about that answer, and keep going until you reach something an action item can fix. Here's a made-up one for Pi-hole:
+
+1. Why did DNS fail? Because the Pi-hole pod stopped.
+2. Why did it stop? Because its node rebooted.
+3. Why didn't it move to the other node? Because the control plane was on the node that rebooted, so nothing could reschedule it.
+
+That third answer is one I can fix, so the chain can stop there. It doesn't have to reach five. Each answer is about the system, which keeps the postmortem blameless without anyone having to try. If there's more than one cause, each one gets its own chain.
+
 ## Action items are the point
 
 Everything else in the postmortem is there to get to the action items. Each one gets one owner, one tracking link, and a type:
