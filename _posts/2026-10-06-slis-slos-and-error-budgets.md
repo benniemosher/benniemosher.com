@@ -102,10 +102,12 @@ Pi-hole was the first SLO I wrote for real, since it has the traffic to make the
 
 One thing surprised me. I left the fastest alert out on purpose. With a probe once a minute, a single failed probe in an hour is already a burn rate of 16.7, so one blip would page me. I'll explain what that number means in the next post.
 
+> **Update, 2026-10-10:** The probe runs every 10 seconds now, so Pi-hole has all three alerts, and there's a second SLI from the real DNS replies. The [burn-rate post](/learning/2026/10/08/burn-rate-alerts.html#pi-hole-and-why-i-left-the-fast-alert-off) has the details.
+
 I did test it. I made temporary copies of the two alerts, fed them a fake 95% success rate, and both fired in Slack and Webex. Then I switched the fake rate to 100% and the resolved messages showed up in both.
 
 ## What's next
 
-An SLO only helps if something is watching it. The next post covers burn-rate alerts, the part that turns an error budget into an alert that pages me for a fast problem and just opens a ticket for a slow one.
+An SLO only helps if something is watching it. [The next post](/learning/2026/10/08/burn-rate-alerts.html) covers burn-rate alerts, the part that turns an error budget into an alert that pages me for a fast problem and just opens a ticket for a slow one.
 
 The sources for all of this are the SRE book's chapter on [service level objectives](https://sre.google/sre-book/service-level-objectives/) and the Workbook's chapter on [implementing SLOs](https://sre.google/workbook/implementing-slos/).
