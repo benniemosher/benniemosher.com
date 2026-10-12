@@ -51,7 +51,7 @@ The template says one runbook per alert. I have six Pi-hole alerts, and I wrote 
 
 ## Putting the link on the alert
 
-A runbook nobody can find at 3am doesn't help, so each alert now carries a link to its runbook. I added a `runbooks` input to my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability/tree/v0.18.1) module. It sets Grafana's `runbook_url` on each rule, and the Slack and Webex messages show the link next to the alert.
+A runbook nobody can find at 3am doesn't help, so each alert now carries a link to its runbook. I added a `runbooks` input to my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability) module. It sets Grafana's `runbook_url` on each rule, and the Slack and Webex messages show the link next to the alert.
 
 The module only links rules you list, so nothing points at a runbook that doesn't exist. It also has an output that lists every rule that pages and has no runbook. In my homelab that list is still long, and that's fine. It's a to-do list now instead of something I'd forget about.
 
@@ -71,7 +71,7 @@ That last one stood out to me. If a person found it before the alert did, that's
 
 It has to be blameless. The book says a blameless postmortem focuses on the contributing causes and doesn't blame a person or team for doing something wrong. In practice, that means "the deploy tool allowed X", not "someone ran X by mistake".
 
-My [postmortem template](https://github.com/Mosher-Labs/terraform-kubernetes-observability/blob/v0.18.1/docs/templates/postmortem.md) has a summary, the impact, a timeline, root causes, how long it took to notice, and what went well, what went badly, and where we got lucky. The impact section uses the error budget from the [first post](/learning/2026/10/06/slis-slos-and-error-budgets.html): "this used 18% of the 30-day budget" says more than "DNS was down for a while."
+My [postmortem template](https://github.com/Mosher-Labs/terraform-kubernetes-observability/blob/main/docs/templates/postmortem.md) has a summary, the impact, a timeline, root causes, how long it took to notice, and what went well, what went badly, and where we got lucky. The impact section uses the error budget from the [first post](/learning/2026/10/06/slis-slos-and-error-budgets.html): "this used 18% of the 30-day budget" says more than "DNS was down for a while."
 
 For root causes, the template uses the five whys. You ask why the failure happened, then ask why about that answer, and keep going until you reach something an action item can fix. Here's a made-up one for Pi-hole:
 
@@ -98,4 +98,4 @@ A detect item usually turns into a new alert or a new SLI, which takes you back 
 
 A runbook is for the 5 minutes after an alert fires. A postmortem is for the week after an incident. The runbook gets you to a fix, and the postmortem's action items make the next alert, runbook, or SLO better.
 
-The sources are the SRE book's [introduction](https://sre.google/sre-book/introduction/) and [postmortem culture](https://sre.google/sre-book/postmortem-culture/) chapters, and the Workbook's chapter on [postmortem culture](https://sre.google/workbook/postmortem-culture/). The templates are in the [module's docs](https://github.com/Mosher-Labs/terraform-kubernetes-observability/tree/v0.18.1/docs/templates).
+The sources are the SRE book's [introduction](https://sre.google/sre-book/introduction/) and [postmortem culture](https://sre.google/sre-book/postmortem-culture/) chapters, and the Workbook's chapter on [postmortem culture](https://sre.google/workbook/postmortem-culture/). The templates are in the [module's docs](https://github.com/Mosher-Labs/terraform-kubernetes-observability/tree/main/docs/templates).
