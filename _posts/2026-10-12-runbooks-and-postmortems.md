@@ -21,9 +21,9 @@ flowchart LR
 
 ## The runbook
 
-A runbook is written before the alert fires and read while it's firing. The person reading it was just woken up at 3am and may never have seen this alert before. So it's short, it starts with what the alert means and who it affects, and it gets to the first checks fast.
+A runbook is written before the alert fires and read while it's firing. The person reading it was just woken up at 3 am and may never have seen this alert before. So it's short, it starts with what the alert means and who it affects, and it gets to the first checks fast.
 
-The SRE book puts a number on why it's worth writing one. Google found that writing down the best practices ahead of time in a playbook "produces roughly a 3x improvement in MTTR as compared to the strategy of 'winging it.'" That's from the [introduction](https://sre.google/sre-book/introduction/), and it was enough to convince me.
+The SRE book quantifies why it's worth writing one. Google found that writing down the best practices ahead of time in a playbook "produces roughly a 3x improvement in MTTR as compared to the strategy of 'winging it.'" That's from the [introduction](https://sre.google/sre-book/introduction/), and it was enough to convince me.
 
 Here are the sections I settled on:
 
@@ -34,7 +34,7 @@ Here are the sections I settled on:
 - Mitigations, each with how to verify it worked, and a "Do not" line for anything risky
 - Escalation, dashboards, and a history table at the bottom
 
-Every likely cause points at a mitigation. That was the rule that made the template click for me. A runbook that lists causes without saying what to do about them just gives you more to read at 3am.
+Every likely cause points to a mitigation. That rule made the template click for me. A runbook that lists causes without saying what to do about them just gives you more to read at 3 am.
 
 ## The Pi-hole runbook
 
@@ -51,9 +51,9 @@ The template says one runbook per alert. I have six Pi-hole alerts, and I wrote 
 
 ## Putting the link on the alert
 
-A runbook nobody can find at 3am doesn't help, so each alert now carries a link to its runbook. I added a `runbooks` input to my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability) module. It sets Grafana's `runbook_url` on each rule, and the Slack and Webex messages show the link next to the alert.
+A runbook nobody can find at 3 am doesn't help, so each alert now carries a link to its runbook. I added a `runbooks` input to my [terraform-kubernetes-observability](https://github.com/Mosher-Labs/terraform-kubernetes-observability) module. It sets Grafana's `runbook_url` on each rule, and the Slack and Webex messages show the link next to the alert.
 
-The module only links rules you list, so nothing points at a runbook that doesn't exist. It also has an output that lists every rule that pages and has no runbook. In my homelab that list is still long, and that's fine. It's a to-do list now instead of something I'd forget about.
+The module only links rules you list, so nothing points to a runbook that doesn't exist. It also has an output that lists every rule that pages and has no runbook. In my homelab, that list is still long, and that's fine. It's a to-do list now instead of something I'd forget about.
 
 My first release of this had a bug. If you gave a rule a full URL and no base URL, which is exactly what my homelab does, the plan failed. My tests always set both, so they never caught it. I fixed it in the next release and added the test I should have written the first time.
 
