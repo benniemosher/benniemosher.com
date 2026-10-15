@@ -4,14 +4,14 @@
     "vendor:mermaid": "cp node_modules/mermaid/dist/mermaid.min.js assets/js/mermaid.min.js"
   },
   "devDependencies": {
-    "mermaid": "12.1.0",
+    "mermaid": "12.2.0",
     "stylelint": "17.16.0",
     "stylelint-config-sass-guidelines": "13.0.0",
     "stylelint-config-standard": "40.0.0",
     "workbox-cli": "7.4.1"
   },
   "overrides": {
-    "got": "16.0.0",
+    "got": "16.1.0",
     "tmp": "0.2.7"
   }
 }
