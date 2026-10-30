@@ -3,7 +3,7 @@
 
 [build.environment]
   RUBY_VERSION = "4.0.5"
-  NODE_VERSION = "24.22.2"
+  NODE_VERSION = "26.13.0"
 
 # Previews also build posts dated in the future, so a scheduled post can be read
 # before it goes live. Production builds leave them out.
