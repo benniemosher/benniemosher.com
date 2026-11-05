@@ -4,7 +4,7 @@
     "vendor:mermaid": "cp node_modules/mermaid/dist/mermaid.min.js assets/js/mermaid.min.js"
   },
   "devDependencies": {
-    "mermaid": "12.2.0",
+    "mermaid": "12.3.0",
     "stylelint": "17.16.0",
     "stylelint-config-sass-guidelines": "13.0.0",
     "stylelint-config-standard": "40.0.0",
