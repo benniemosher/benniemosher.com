@@ -15,7 +15,7 @@
   padding: 1rem;
 
   &__card {
-    background: #fff;
+    background: var(--card-bg);
     border-radius: 8px;
     padding: 2.5rem 2rem;
     max-width: 480px;
@@ -34,7 +34,7 @@
 
   &__title {
     font-family: Merriweather, serif;
-    color: variables.$primary-color;
+    color: var(--heading);
     font-size: 1.5rem;
     font-weight: 400;
     margin: 0 0 1rem;
@@ -43,7 +43,7 @@
   }
 
   &__message {
-    color: #4c566a;
+    color: var(--text);
     line-height: 1.6;
     margin: 0 0 2rem;
     max-width: none;
@@ -83,11 +83,11 @@
 
     &--cancel {
       background: transparent;
-      color: variables.$primary-color;
+      color: var(--heading);
 
       &:hover,
       &:focus {
-        background: color.adjust(variables.$primary-color, $lightness: 60%);
+        background: var(--button-hover-bg);
         outline: none;
       }
     }

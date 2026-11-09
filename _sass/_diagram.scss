@@ -1,4 +1,5 @@
-// Mermaid diagrams, styled after the Nord palette.
+// Mermaid diagrams, styled after the Nord palette. The diagram colors come
+// from diagrams.js, which picks a theme to match the color scheme.
 .mermaid {
   box-sizing: border-box;
   margin-top: 1.5rem;
@@ -6,8 +7,8 @@
   padding: 1.25rem 1rem;
   overflow-x: auto;
   text-align: center;
-  background: #eceff4;
-  border: 1px solid #d8dee9;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 10px;
 
   svg {

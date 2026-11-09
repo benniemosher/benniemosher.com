@@ -1,6 +1,3 @@
-@use "sass:color";
-@use "variables";
-
 article {
   margin-top: 40px;
 
@@ -29,9 +26,9 @@ article {
   }
 
   .read-more {
-    background-color: variables.$secondary-color;
+    background-color: var(--accent);
     border-radius: 3px;
-    color: #fff;
+    color: var(--on-accent);
     display: inline-block;
     box-sizing: border-box;
     padding: 0.5rem 1rem;
@@ -39,19 +36,20 @@ article {
     transition: background-color 0.15s ease-in-out;
 
     &:hover {
-      background-color: color.adjust(variables.$secondary-color, $lightness: 10%);
+      background-color: var(--accent-hover);
     }
   }
 
   hr {
     border: none;
-    border-top: 1px solid color.adjust(variables.$primary-color, $lightness: 50%);
+    border-top: 1px solid var(--rule);
     margin: 2rem 0;
   }
 
   img {
     width: 100%;
     max-width: 1200px;
+    filter: var(--image-filter);
   }
 
   table {
@@ -60,7 +58,7 @@ article {
     margin-bottom: 1.5rem;
     border-collapse: separate;
     border-spacing: 0;
-    border: 1px solid #d8dee9;
+    border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
     font-size: 0.95em;
@@ -79,17 +77,17 @@ article {
   }
 
   th {
-    background-color: variables.$primary-color;
-    color: #eceff4;
+    background-color: var(--th-bg);
+    color: var(--th-text);
     font-weight: 700;
   }
 
   td {
-    border-top: 1px solid #d8dee9;
+    border-top: 1px solid var(--border);
   }
 
   tbody tr:nth-child(even) td {
-    background-color: #eceff4;
+    background-color: var(--surface);
   }
 
   td:first-child {
@@ -102,10 +100,10 @@ article {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     padding: 0.9rem 1.25rem;
-    background-color: #eceff4;
-    border-left: 4px solid variables.$secondary-color;
+    background-color: var(--surface);
+    border-left: 4px solid var(--accent);
     border-radius: 0 8px 8px 0;
-    color: variables.$primary-color;
+    color: var(--heading);
     font-size: 1.05em;
 
     p {
@@ -120,9 +118,9 @@ article {
     margin-bottom: 1.5rem;
     padding: 1rem 1.25rem;
     overflow-x: auto;
-    background-color: #2e3440;
+    background-color: var(--pre-bg);
     border-radius: 8px;
-    color: #d8dee9;
+    color: var(--pre-text);
     font-size: 0.9em;
     line-height: 1.55;
 
@@ -136,9 +134,9 @@ article {
 
   code {
     padding: 0.1em 0.35em;
-    background-color: #e5e9f0;
+    background-color: var(--code-bg);
     border-radius: 4px;
-    color: variables.$primary-color;
+    color: var(--code-text);
     font-size: 0.9em;
   }
 }

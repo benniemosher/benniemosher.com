@@ -1,12 +1,10 @@
-@use "sass:color";
-@use "variables";
-
 body {
   font-family: Raleway, sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
-  color: #4c566a;
+  color: var(--text);
+  background-color: var(--bg);
 }
 
 main,
@@ -31,12 +29,12 @@ main {
 
 a {
   text-decoration: none;
-  color: #434c5e;
+  color: var(--link);
   font-weight: 600;
   transition: all 0.15s ease-in-out;
 
   &:hover {
-    color: variables.$secondary-color;
+    color: var(--link-hover);
   }
 }
 
@@ -74,7 +72,7 @@ h4,
 h5,
 h6 {
   font-family: Merriweather, sans-serif;
-  color: variables.$primary-color;
+  color: var(--heading);
 
   &:first-child {
     margin-top: 0;
@@ -93,7 +91,7 @@ ul {
 h1 {
   font-size: 25px;
   margin-top: 80px;
-  color: color.adjust(variables.$primary-color, $lightness: 20%);
+  color: var(--heading-muted);
   font-family: Raleway, sans-serif;
   font-weight: 400;
 
@@ -132,6 +130,6 @@ h3 {
   margin-top: 5px;
 
   a {
-    color: #abb7b7;
+    color: var(--subtle);
   }
 }
