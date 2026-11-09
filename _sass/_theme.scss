@@ -1,0 +1,60 @@
+@use "sass:color";
+@use "variables";
+
+// Color tokens. Light is the default; the dark block overrides them from the
+// visitor's OS or browser setting. Dark values come from the Nord palette.
+// Text pairs meet WCAG AA (4.5:1) in both themes.
+:root {
+  color-scheme: light dark;
+
+  --bg: #fff;
+  --text: #4c566a; // 7.4:1 on --bg
+  --link: #434c5e; // 8.6:1 on --bg
+  --link-hover: #4c6a8f; // 5.6:1 on --bg
+  --heading: #{variables.$primary-color};
+  --heading-muted: #{color.adjust(variables.$primary-color, $lightness: 20%)};
+  --subtle: #5f6b7a; // 5.4:1 on --bg
+  --rule: #{color.adjust(variables.$primary-color, $lightness: 50%)};
+  --rule-soft: #ececec;
+  --border: #d8dee9;
+  --surface: #eceff4;
+  --code-bg: #e5e9f0;
+  --code-text: #{variables.$primary-color};
+  --pre-bg: #2e3440;
+  --pre-text: #d8dee9;
+  --th-bg: #{variables.$primary-color};
+  --th-text: #eceff4;
+  --accent: #{variables.$secondary-color};
+  --accent-hover: #{color.adjust(variables.$secondary-color, $lightness: 10%)};
+  --on-accent: #{variables.$primary-color}; // 5.0:1 on --accent
+  --card-bg: #fff;
+  --button-hover-bg: #{color.adjust(variables.$primary-color, $lightness: 60%)};
+  --logo-filter: none;
+  --image-filter: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2e3440;
+    --text: #d8dee9; // 9.3:1 on --bg
+    --link: #e5e9f0; // 10.3:1 on --bg
+    --link-hover: #{variables.$secondary-color}; // 6.2:1 on --bg
+    --heading: #eceff4;
+    --heading-muted: #a3adc2; // 5.5:1 on --bg
+    --subtle: #a3adc2;
+    --rule: #4c566a;
+    --rule-soft: #4c566a;
+    --border: #4c566a;
+    --surface: #3b4252;
+    --code-bg: #434c5e;
+    --code-text: #e5e9f0; // 7.5:1 on --code-bg
+    --pre-bg: #242933;
+    --pre-text: #d8dee9; // 10.8:1 on --pre-bg
+    --th-bg: #434c5e;
+    --th-text: #eceff4; // 7.5:1 on --th-bg
+    --card-bg: #3b4252;
+    --button-hover-bg: #434c5e;
+    --logo-filter: brightness(0) invert(0.85);
+    --image-filter: brightness(0.9);
+  }
+}
