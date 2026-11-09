@@ -77,6 +77,27 @@ The changes are in [the policy](https://github.com/Mosher-Labs/homelab-gitops/bl
 
 I've never triggered this policy. The alerts have been failure-tested, so I know they fire and resolve, but the freeze itself hasn't happened. I don't know whether "leave the Renovate PRs open" is easy to follow when the pull requests pile up, or whether I'd just merge them anyway. One person writing a policy, approving it, and being frozen by it is also a weak setup, because nobody else would notice if I ignored it. For a homelab, that's fine. For a team, it's the reason the book wants product, development, and on-call to all sign it.
 
+## Update: the alert fired seven minutes after I published this
+
+I merged this post at 6:11 am on November 9. At 6:18 am, the medium burn alert for the Pi-hole replies SLO went off in Slack. It was the first real alert since I tested them, so the section above is already out of date.
+
+The cause wasn't Pi-hole. A work laptop on its own VLAN was using Pi-hole for DNS, because the VLAN's DHCP settings pointed there. Every few minutes, it asked for one reverse lookup that fails on every resolver I tried: 1.1.1.1, 9.9.9.9, and 1.1.1.1 with DNSSEC checking off. The runbook's first checks found it in a few minutes, because one client and one name made 19 of the last 21 bad replies.
+
+The alert made it look smaller than it was. Here are the 30-day numbers, from both Prometheus and Pi-hole's own database:
+
+| | Bad replies | Share of the budget |
+| --- | --- | --- |
+| Budget (0.1% of 766,817 replies) | about 767 | 100% |
+| Everything, as measured | 1,676 | about 219% |
+| From the one lookup | 1,417 | about 185% |
+| Everything else | 259 | about 34% |
+
+Without that one lookup, the SLO would have held. The laptop also sends most of the traffic, which is why the table above assumed 15,000 queries a day and the real number is closer to 25,000. The ratios hold, but the budget is 767 bad replies, not 450.
+
+Two things I haven't figured out. First, the rule's own math says the medium condition was true for about 24 hours on November 8, and my first Slack message was on November 9. I replayed the rule against the stored metrics to check that. I haven't seen Grafana's alert history yet, so I don't know whether the alert fired and I missed it or didn't fire at all. Second, I assumed the work VLAN couldn't reach the rest of my network, and a ping from my main LAN succeeded before I changed anything. I'm checking that next.
+
+I fixed the DNS setting in UniFi and renewed the laptop's lease, and it stopped sending queries to Pi-hole. One incident used far more than 20% of the budget, so the policy requires a postmortem. The draft, with the action items and the open questions, is in [this pull request](https://github.com/Mosher-Labs/homelab-gitops/pull/257).
+
 ## The short version
 
 The SLO tells you how much unreliability is acceptable, the alerts tell you when you're spending it, and the policy tells you what to do when it's gone. Write it before you need it, put numbers in it, name the causes that let you keep shipping and the ones that don't, and give it a review date you'll actually keep.
