@@ -62,7 +62,7 @@ I didn't expect that third result. I'd been thinking of the policy as a switch t
 
 I wrote the first version of this policy on October 6, along with the SLO document. When I went back to it for this post, I found four problems.
 
-1. **It was never approved.** The "Approved on" field still said "Not yet", and I still haven't signed it off.
+1. **It was never approved.** The "Approved on" field still said "Not yet". I read it again after fixing the rest and approved it on November 8.
 2. **I missed the review date.** I'd set it to November 6 and asked for monthly reviews while the SLO is new. That date passed two days before I read it.
 3. **It was missing two sections from the template.** I'd left out the non-goals and who decides when there's a disagreement. I'm the only person who runs the cluster, so I decide, and now the policy says so. That sounds silly, but a policy that doesn't say who decides is the kind that gets skipped.
 4. **It didn't say what Renovate does.** My cluster gets dependency update PRs every day, and the policy says to stop "non-urgent changes." I'd never decided whether a Renovate bump is one. It is. During a freeze, the PRs for the affected service and what it depends on stay open until the freeze ends, unless they're security updates. The rest keep merging.
