@@ -11,7 +11,7 @@ The first three posts in this series covered the [budget](/learning/2026/10/06/s
 
 ```mermaid
 flowchart TD
-    A("Error budget<br/>1 minus the SLO") --> B{"Budget left?"}
+    A("Error budget<br/>100% minus the SLO") --> B{"Budget left?"}
     B -- yes --> C("Ship changes as normal")
     B -- no --> D{"What spent it?"}
     D -- "Outside my control:<br/>power, ISP, a bad probe" --> E("Exception: keep shipping")
@@ -37,6 +37,8 @@ The example has a few parts, and I used all of them:
 - A date to review the policy again
 
 The "must" and "may" lists are the part that made it click for me. If my own deploy or config caused the outage, I have to work on reliability. If the internet went down, that was the ISP, and freezing my changes wouldn't fix it.
+
+An exception only decides whether I freeze changes. It doesn't mean I ignore the cause. The policy has a quarterly rule: if one kind of outage uses more than 20% of the budget over a quarter, a P0 item goes on the next quarter's plan. If the ISP keeps spending my budget, that item is a backup connection. At a company, it would be a ticket to add a second ISP.
 
 ## The numbers for Pi-hole
 
