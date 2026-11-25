@@ -94,9 +94,14 @@ The alert made it look smaller than it was. Here are the 30-day numbers, from bo
 
 Without that one lookup, the SLO would have held. The laptop also sends most of the traffic, which is why the table above assumed 15,000 queries a day and the real number is closer to 25,000. The ratios hold, but the budget is 767 bad replies, not 450.
 
-Two things I haven't figured out. First, the rule's own math says the medium condition was true for about 24 hours on November 8, and my first Slack message was on November 9. I replayed the rule against the stored metrics to check that. I haven't seen Grafana's alert history yet, so I don't know whether the alert fired and I missed it or didn't fire at all. Second, I assumed the work VLAN couldn't reach the rest of my network, and a ping from my main LAN succeeded before I changed anything. I'm checking that next.
+I fixed the DNS setting in UniFi and renewed the laptop's lease, and it stopped sending queries to Pi-hole. One incident used far more than 20% of the budget, so the policy requires a postmortem. It's [written up in the repo](https://github.com/Mosher-Labs/homelab-gitops/blob/main/docs/postmortems/2026-11-09-work-vlan-pihole-dns.md), with the timeline, the action items, and the open questions.
 
-I fixed the DNS setting in UniFi and renewed the laptop's lease, and it stopped sending queries to Pi-hole. One incident used far more than 20% of the budget, so the policy requires a postmortem. The draft, with the action items and the open questions, is in [this pull request](https://github.com/Mosher-Labs/homelab-gitops/pull/257).
+Two things I still haven't figured out, and each has an issue:
+
+1. **Why the alert was late.** The rule's own math says the medium condition was true for about 24 hours on November 8, and my first Slack message was on November 9. I replayed the rule against the stored metrics to check that, but I haven't seen Grafana's alert history, so I don't know whether the alert never fired or fired and didn't reach Slack. I'll look at the history and test the alerts again in December ([issue 286](https://github.com/Mosher-Labs/homelab-gitops/issues/286)).
+2. **Whether the work VLAN is as isolated as I thought.** I assumed it couldn't reach the rest of my network, and a ping from my main LAN succeeded before I changed anything. I haven't checked the firewall rules yet ([issue 287](https://github.com/Mosher-Labs/homelab-gitops/issues/287)).
+
+The second one is the bigger lesson for me. I wrote down an assumption about my own network and never tested it.
 
 ## The short version
 
